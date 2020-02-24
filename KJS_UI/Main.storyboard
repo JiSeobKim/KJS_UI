@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="k4a-O2-o2M">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--KJS-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="KJS_Test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="N0v-9h-Bqy">
+                                <rect key="frame" x="154" y="433" width="106" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYZ-8Q-Qls">
+                                        <rect key="frame" x="0.0" y="0.0" width="106" height="30"/>
+                                        <state key="normal" title="Drag Animation"/>
+                                        <connections>
+                                            <segue destination="VM2-eZ-Tnc" kind="show" id="ZLh-6c-6MH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="N0v-9h-Bqy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="84F-0O-t7Q"/>
+                            <constraint firstItem="N0v-9h-Bqy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="R4t-NO-7VJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="KJS" id="mSS-OZ-ERo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1081.1594202898552" y="-1.3392857142857142"/>
+        </scene>
+        <!--Drag Animation-->
+        <scene sceneID="o5W-Iy-F7y">
+            <objects>
+                <viewController id="VM2-eZ-Tnc" customClass="StackAnimationViewController" customModule="KJS_Test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JHh-mk-ZMa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8GK-o2-Ube">
+                                <rect key="frame" x="0.0" y="140" width="414" height="756"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="PFS-NU-COz">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="207"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="999" constant="207" id="fmV-Iv-Puy"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="207" id="xQq-5e-qsb"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="PFS-NU-COz" secondAttribute="bottom" id="16o-RU-rW3"/>
+                                    <constraint firstItem="PFS-NU-COz" firstAttribute="leading" secondItem="8GK-o2-Ube" secondAttribute="leading" id="8Cr-Uy-FeJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="PFS-NU-COz" secondAttribute="trailing" id="A0v-Qe-VhA"/>
+                                    <constraint firstItem="PFS-NU-COz" firstAttribute="top" secondItem="8GK-o2-Ube" secondAttribute="top" id="ZXi-w2-7Ca"/>
+                                </constraints>
+                            </scrollView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="KOF-dY-Vbg">
+                                <rect key="frame" x="158.5" y="832" width="97" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHS-m8-cNE">
+                                        <rect key="frame" x="0.0" y="0.0" width="36" height="30"/>
+                                        <state key="normal" title="Add"/>
+                                        <connections>
+                                            <action selector="addViewAction:" destination="VM2-eZ-Tnc" eventType="touchUpInside" id="xea-yb-2K4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xn7-Mh-7tH">
+                                        <rect key="frame" x="61" y="0.0" width="36" height="30"/>
+                                        <state key="normal" title="Clear"/>
+                                        <connections>
+                                            <action selector="clearAction:" destination="VM2-eZ-Tnc" eventType="touchDragInside" id="f9g-1k-2tl"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="62A-qU-rUH">
+                                <rect key="frame" x="147" y="388" width="120" height="120"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="abM-Ov-xRZ"/>
+                                    <constraint firstAttribute="height" constant="120" id="bQF-4J-Xly"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="PFS-NU-COz" firstAttribute="width" secondItem="JHh-mk-ZMa" secondAttribute="width" id="6UJ-nk-xn6"/>
+                            <constraint firstItem="8GK-o2-Ube" firstAttribute="top" secondItem="JUz-0T-Y3A" secondAttribute="top" id="9Ys-rV-It6"/>
+                            <constraint firstItem="62A-qU-rUH" firstAttribute="centerX" secondItem="JHh-mk-ZMa" secondAttribute="centerX" id="AUm-3I-J2A"/>
+                            <constraint firstItem="JUz-0T-Y3A" firstAttribute="trailing" secondItem="8GK-o2-Ube" secondAttribute="trailing" id="JMY-9J-fuE"/>
+                            <constraint firstItem="JUz-0T-Y3A" firstAttribute="bottom" secondItem="KOF-dY-Vbg" secondAttribute="bottom" id="Wrs-qM-LGc"/>
+                            <constraint firstItem="KOF-dY-Vbg" firstAttribute="centerX" secondItem="JHh-mk-ZMa" secondAttribute="centerX" id="Zcw-2e-DOK"/>
+                            <constraint firstItem="62A-qU-rUH" firstAttribute="centerY" secondItem="JHh-mk-ZMa" secondAttribute="centerY" id="atn-oK-KnV"/>
+                            <constraint firstItem="8GK-o2-Ube" firstAttribute="leading" secondItem="JUz-0T-Y3A" secondAttribute="leading" id="pK6-y3-Lxg"/>
+                            <constraint firstAttribute="bottom" secondItem="8GK-o2-Ube" secondAttribute="bottom" id="uf9-aq-66J"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JUz-0T-Y3A"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Drag Animation" id="Osb-sl-s48"/>
+                    <connections>
+                        <outlet property="btnStackView" destination="KOF-dY-Vbg" id="tUb-yV-MD6"/>
+                        <outlet property="collecterView" destination="62A-qU-rUH" id="RiD-K0-QvX"/>
+                        <outlet property="stackView" destination="PFS-NU-COz" id="4qA-aq-qGP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VZF-Ry-liY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1958" y="-1"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oGC-hh-Gsx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="k4a-O2-o2M" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="ZEq-KJ-dOs">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="bWU-Op-lMS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vv0-bP-q4C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="171.01449275362319" y="-1.3392857142857142"/>
+        </scene>
+    </scenes>
+</document>
