@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="k4a-O2-o2M">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="k4a-O2-o2M">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--CollectionView-->
+        <scene sceneID="ib6-aJ-MCb">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CollectionView" id="lIM-oX-1x1" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="68G-Za-7yR"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xy4-sE-dbD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1883" y="-559"/>
+        </scene>
         <!--KJS-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -15,32 +27,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="N0v-9h-Bqy">
-                                <rect key="frame" x="133" y="412" width="148" height="72"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="N0v-9h-Bqy">
+                                <rect key="frame" x="133" y="391" width="148" height="114"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYZ-8Q-Qls">
-                                        <rect key="frame" x="0.0" y="0.0" width="148" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYZ-8Q-Qls">
+                                        <rect key="frame" x="0.0" y="0.0" width="106" height="30"/>
                                         <state key="normal" title="Drag Animation"/>
                                         <connections>
                                             <segue destination="VM2-eZ-Tnc" kind="show" id="ZLh-6c-6MH"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V9Z-vL-yV8">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V9Z-vL-yV8">
                                         <rect key="frame" x="0.0" y="42" width="148" height="30"/>
                                         <state key="normal" title="Drag Animation(Blog)"/>
                                         <connections>
                                             <segue destination="wSq-Gz-bHP" kind="show" id="Ya9-AH-JPA"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OmF-SD-BN1">
+                                        <rect key="frame" x="0.0" y="84" width="102" height="30"/>
+                                        <state key="normal" title="CollectionView"/>
+                                        <connections>
+                                            <segue destination="lIM-oX-1x1" kind="show" id="9lP-v9-KTz"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="N0v-9h-Bqy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="84F-0O-t7Q"/>
                             <constraint firstItem="N0v-9h-Bqy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="R4t-NO-7VJ"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="KJS" id="mSS-OZ-ERo"/>
                 </viewController>
@@ -59,26 +78,26 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="7fJ-fm-ybD">
                                 <rect key="frame" x="149" y="412" width="116" height="72"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pmi-Ki-0qs">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pmi-Ki-0qs">
                                         <rect key="frame" x="0.0" y="0.0" width="116" height="30"/>
                                         <state key="normal" title="Step1. Gesture"/>
                                         <connections>
                                             <segue destination="d8t-ql-FA4" kind="show" id="cmG-4T-oPj"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IfX-Ct-U7p">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IfX-Ct-U7p">
                                         <rect key="frame" x="0.0" y="42" width="116" height="30"/>
                                         <state key="normal" title="Step2. Transition"/>
                                     </button>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="3fJ-Ah-CH6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="7fJ-fm-ybD" firstAttribute="centerX" secondItem="shH-S2-dHl" secondAttribute="centerX" id="HLm-4g-Ti9"/>
                             <constraint firstItem="7fJ-fm-ybD" firstAttribute="centerY" secondItem="shH-S2-dHl" secondAttribute="centerY" id="vFp-Ym-e7D"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="3fJ-Ah-CH6"/>
                     </view>
                     <navigationItem key="navigationItem" id="ch0-7S-PxF"/>
                 </viewController>
@@ -99,11 +118,11 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Bp-RC-RfN">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="252.5"/>
-                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yuB-eF-kUQ">
                                         <rect key="frame" x="0.0" y="267.5" width="390" height="252.5"/>
-                                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor"/>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -111,14 +130,14 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="d7M-go-lWy"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="eAv-Jy-5jk" firstAttribute="centerX" secondItem="VLe-QX-CFD" secondAttribute="centerX" id="9av-n4-bKC"/>
                             <constraint firstItem="eAv-Jy-5jk" firstAttribute="leading" secondItem="d7M-go-lWy" secondAttribute="leading" constant="12" id="bVS-28-MaY"/>
                             <constraint firstItem="eAv-Jy-5jk" firstAttribute="centerY" secondItem="VLe-QX-CFD" secondAttribute="centerY" id="ecD-2E-4kB"/>
                             <constraint firstItem="d7M-go-lWy" firstAttribute="trailing" secondItem="eAv-Jy-5jk" secondAttribute="trailing" constant="12" id="tlk-NB-UGx"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="d7M-go-lWy"/>
                     </view>
                     <navigationItem key="navigationItem" id="uEJ-bM-iAb"/>
                     <connections>
@@ -159,14 +178,14 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="KOF-dY-Vbg">
                                 <rect key="frame" x="158.5" y="832" width="97" height="30"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHS-m8-cNE">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHS-m8-cNE">
                                         <rect key="frame" x="0.0" y="0.0" width="36" height="30"/>
                                         <state key="normal" title="Add"/>
                                         <connections>
                                             <action selector="addViewAction:" destination="VM2-eZ-Tnc" eventType="touchUpInside" id="xea-yb-2K4"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xn7-Mh-7tH">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xn7-Mh-7tH">
                                         <rect key="frame" x="61" y="0.0" width="36" height="30"/>
                                         <state key="normal" title="Clear"/>
                                         <connections>
@@ -177,14 +196,15 @@
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="62A-qU-rUH">
                                 <rect key="frame" x="147" y="388" width="120" height="120"/>
-                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="abM-Ov-xRZ"/>
                                     <constraint firstAttribute="height" constant="120" id="bQF-4J-Xly"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="JUz-0T-Y3A"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="PFS-NU-COz" firstAttribute="width" secondItem="JHh-mk-ZMa" secondAttribute="width" constant="-32" id="6UJ-nk-xn6"/>
                             <constraint firstItem="8GK-o2-Ube" firstAttribute="top" secondItem="JUz-0T-Y3A" secondAttribute="top" id="9Ys-rV-It6"/>
@@ -196,7 +216,6 @@
                             <constraint firstItem="8GK-o2-Ube" firstAttribute="leading" secondItem="JUz-0T-Y3A" secondAttribute="leading" id="pK6-y3-Lxg"/>
                             <constraint firstAttribute="bottom" secondItem="8GK-o2-Ube" secondAttribute="bottom" id="uf9-aq-66J"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="JUz-0T-Y3A"/>
                     </view>
                     <navigationItem key="navigationItem" title="Drag Animation" id="Osb-sl-s48"/>
                     <connections>
@@ -228,4 +247,18 @@
             <point key="canvasLocation" x="171.01449275362319" y="-1.3392857142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
