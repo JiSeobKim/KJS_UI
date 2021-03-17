@@ -9,6 +9,51 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Drag Animation Final View Controller-->
+        <scene sceneID="3c8-A1-S2M">
+            <objects>
+                <viewController id="tiV-pt-LEO" customClass="DragAnimationFinalViewController" customModule="KJS_UI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5vA-39-Fwq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rgB-7H-E5e">
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gy1-Bx-Kjq">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="400" id="qZe-3v-R6Q"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Gy1-Bx-Kjq" firstAttribute="top" secondItem="1Z8-ni-8CJ" secondAttribute="top" id="57F-Ns-73Q"/>
+                                    <constraint firstItem="Gy1-Bx-Kjq" firstAttribute="bottom" secondItem="1Z8-ni-8CJ" secondAttribute="bottom" id="NwD-H3-N5N"/>
+                                    <constraint firstItem="Qdz-Ub-Pef" firstAttribute="width" secondItem="Gy1-Bx-Kjq" secondAttribute="width" id="YEe-fh-UX2"/>
+                                    <constraint firstItem="Gy1-Bx-Kjq" firstAttribute="trailing" secondItem="1Z8-ni-8CJ" secondAttribute="trailing" id="cFg-ng-GLK"/>
+                                    <constraint firstItem="Gy1-Bx-Kjq" firstAttribute="leading" secondItem="1Z8-ni-8CJ" secondAttribute="leading" id="i3Z-n4-esq"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="1Z8-ni-8CJ"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="Qdz-Ub-Pef"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lb0-Q1-5NT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lb0-Q1-5NT" firstAttribute="bottom" secondItem="rgB-7H-E5e" secondAttribute="bottom" id="Cg0-52-30x"/>
+                            <constraint firstItem="lb0-Q1-5NT" firstAttribute="trailing" secondItem="rgB-7H-E5e" secondAttribute="trailing" id="V6U-8G-k18"/>
+                            <constraint firstItem="rgB-7H-E5e" firstAttribute="leading" secondItem="lb0-Q1-5NT" secondAttribute="leading" id="iCN-Nn-sfU"/>
+                            <constraint firstItem="rgB-7H-E5e" firstAttribute="top" secondItem="lb0-Q1-5NT" secondAttribute="top" id="xVj-de-J4d"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="VzH-Ar-cmp"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JaT-fs-PgI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2060.8695652173915" y="1588.3928571428571"/>
+        </scene>
         <!--CollectionView-->
         <scene sceneID="ib6-aJ-MCb">
             <objects>
@@ -76,7 +121,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="7fJ-fm-ybD">
-                                <rect key="frame" x="149" y="412" width="116" height="72"/>
+                                <rect key="frame" x="149" y="391" width="116" height="114"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pmi-Ki-0qs">
                                         <rect key="frame" x="0.0" y="0.0" width="116" height="30"/>
@@ -88,6 +133,13 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IfX-Ct-U7p">
                                         <rect key="frame" x="0.0" y="42" width="116" height="30"/>
                                         <state key="normal" title="Step2. Transition"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nvC-C4-FtS">
+                                        <rect key="frame" x="0.0" y="84" width="116" height="30"/>
+                                        <state key="normal" title="Step3. Final"/>
+                                        <connections>
+                                            <segue destination="tiV-pt-LEO" kind="show" id="Q9g-aD-ftX"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -250,6 +302,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
