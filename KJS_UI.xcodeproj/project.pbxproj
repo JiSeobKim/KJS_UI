@@ -14,6 +14,8 @@
 		6BF541FA2403CB5F002C47DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BF541F82403CB5F002C47DA /* LaunchScreen.storyboard */; };
 		6BF542032403CB74002C47DA /* StackAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF542012403CB74002C47DA /* StackAnimationViewController.swift */; };
 		6BF542042403CB74002C47DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BF542022403CB74002C47DA /* Main.storyboard */; };
+		A0216E462603339A00652CFB /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0216E452603339A00652CFB /* TabBar.storyboard */; };
+		A0216E4B2603343100652CFB /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0216E4A2603343100652CFB /* CustomTabBarController.swift */; };
 		A099B4EB25B5ADCF001B5FCE /* CollectionView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A099B4EA25B5ADCF001B5FCE /* CollectionView.storyboard */; };
 		A099B4EF25B5B133001B5FCE /* HeaderAutoLayoutCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A099B4EE25B5B133001B5FCE /* HeaderAutoLayoutCollectionViewController.swift */; };
 		A0B2A502240BBA8200099E41 /* DragAnimationStep1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B2A501240BBA8200099E41 /* DragAnimationStep1ViewController.swift */; };
@@ -30,6 +32,8 @@
 		6BF541FB2403CB5F002C47DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BF542012403CB74002C47DA /* StackAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackAnimationViewController.swift; sourceTree = "<group>"; };
 		6BF542022403CB74002C47DA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		A0216E452603339A00652CFB /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
+		A0216E4A2603343100652CFB /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		A099B4EA25B5ADCF001B5FCE /* CollectionView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CollectionView.storyboard; sourceTree = "<group>"; };
 		A099B4EE25B5B133001B5FCE /* HeaderAutoLayoutCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderAutoLayoutCollectionViewController.swift; sourceTree = "<group>"; };
 		A0B2A501240BBA8200099E41 /* DragAnimationStep1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAnimationStep1ViewController.swift; sourceTree = "<group>"; };
@@ -71,13 +75,31 @@
 				6BF541F12403CB5F002C47DA /* ViewController.swift */,
 				A099B4E825B5AD9E001B5FCE /* CollectionView */,
 				A0B2A4FF240BBA5200099E41 /* DragAnimation */,
+				A0216E482603341100652CFB /* TabBar */,
 				6BF542022403CB74002C47DA /* Main.storyboard */,
 				A099B4EA25B5ADCF001B5FCE /* CollectionView.storyboard */,
+				A0216E452603339A00652CFB /* TabBar.storyboard */,
 				6BF541F62403CB5F002C47DA /* Assets.xcassets */,
 				6BF541F82403CB5F002C47DA /* LaunchScreen.storyboard */,
 				6BF541FB2403CB5F002C47DA /* Info.plist */,
 			);
 			path = KJS_UI;
+			sourceTree = "<group>";
+		};
+		A0216E482603341100652CFB /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				A0216E492603341A00652CFB /* CustomTabBar */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		A0216E492603341A00652CFB /* CustomTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				A0216E4A2603343100652CFB /* CustomTabBarController.swift */,
+			);
+			path = CustomTabBar;
 			sourceTree = "<group>";
 		};
 		A099B4E825B5AD9E001B5FCE /* CollectionView */ = {
@@ -164,6 +186,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0216E462603339A00652CFB /* TabBar.storyboard in Resources */,
 				6BF541FA2403CB5F002C47DA /* LaunchScreen.storyboard in Resources */,
 				6BF541F72403CB5F002C47DA /* Assets.xcassets in Resources */,
 				6BF542042403CB74002C47DA /* Main.storyboard in Resources */,
@@ -180,6 +203,7 @@
 			files = (
 				A099B4EF25B5B133001B5FCE /* HeaderAutoLayoutCollectionViewController.swift in Sources */,
 				6BF541F22403CB5F002C47DA /* ViewController.swift in Sources */,
+				A0216E4B2603343100652CFB /* CustomTabBarController.swift in Sources */,
 				6BF541EE2403CB5F002C47DA /* AppDelegate.swift in Sources */,
 				A0B2A502240BBA8200099E41 /* DragAnimationStep1ViewController.swift in Sources */,
 				6BF542032403CB74002C47DA /* StackAnimationViewController.swift in Sources */,

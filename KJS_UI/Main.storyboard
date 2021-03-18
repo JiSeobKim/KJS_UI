@@ -21,17 +21,17 @@
                                 <rect key="frame" x="0.0" y="140" width="414" height="722"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gy1-Bx-Kjq">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="400" id="qZe-3v-R6Q"/>
+                                            <constraint firstAttribute="height" constant="1000" id="kxV-ie-3CC"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Gy1-Bx-Kjq" firstAttribute="top" secondItem="1Z8-ni-8CJ" secondAttribute="top" id="57F-Ns-73Q"/>
+                                    <constraint firstItem="Gy1-Bx-Kjq" firstAttribute="width" secondItem="rgB-7H-E5e" secondAttribute="width" id="6uv-UJ-aem"/>
                                     <constraint firstItem="Gy1-Bx-Kjq" firstAttribute="bottom" secondItem="1Z8-ni-8CJ" secondAttribute="bottom" id="NwD-H3-N5N"/>
-                                    <constraint firstItem="Qdz-Ub-Pef" firstAttribute="width" secondItem="Gy1-Bx-Kjq" secondAttribute="width" id="YEe-fh-UX2"/>
                                     <constraint firstItem="Gy1-Bx-Kjq" firstAttribute="trailing" secondItem="1Z8-ni-8CJ" secondAttribute="trailing" id="cFg-ng-GLK"/>
                                     <constraint firstItem="Gy1-Bx-Kjq" firstAttribute="leading" secondItem="1Z8-ni-8CJ" secondAttribute="leading" id="i3Z-n4-esq"/>
                                 </constraints>
@@ -64,6 +64,16 @@
             </objects>
             <point key="canvasLocation" x="1883" y="-559"/>
         </scene>
+        <!--TabBar-->
+        <scene sceneID="1tJ-0Y-6oa">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TabBar" id="rkz-1C-z6J" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="PbK-mX-bfE"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kdi-1B-aD6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1849" y="-506"/>
+        </scene>
         <!--KJS-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -72,11 +82,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="N0v-9h-Bqy">
-                                <rect key="frame" x="133" y="391" width="148" height="114"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="N0v-9h-Bqy">
+                                <rect key="frame" x="133" y="370" width="148" height="156"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYZ-8Q-Qls">
-                                        <rect key="frame" x="0.0" y="0.0" width="106" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="148" height="30"/>
                                         <state key="normal" title="Drag Animation"/>
                                         <connections>
                                             <segue destination="VM2-eZ-Tnc" kind="show" id="ZLh-6c-6MH"/>
@@ -90,10 +100,17 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OmF-SD-BN1">
-                                        <rect key="frame" x="0.0" y="84" width="102" height="30"/>
+                                        <rect key="frame" x="0.0" y="84" width="148" height="30"/>
                                         <state key="normal" title="CollectionView"/>
                                         <connections>
                                             <segue destination="lIM-oX-1x1" kind="show" id="9lP-v9-KTz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G9S-j6-S9G">
+                                        <rect key="frame" x="0.0" y="126" width="148" height="30"/>
+                                        <state key="normal" title="TabBar"/>
+                                        <connections>
+                                            <segue destination="rkz-1C-z6J" kind="show" id="Jky-6V-GJC"/>
                                         </connections>
                                     </button>
                                 </subviews>
