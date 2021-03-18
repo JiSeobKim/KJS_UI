@@ -16,6 +16,8 @@
 		6BF542042403CB74002C47DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BF542022403CB74002C47DA /* Main.storyboard */; };
 		A0216E462603339A00652CFB /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0216E452603339A00652CFB /* TabBar.storyboard */; };
 		A0216E4B2603343100652CFB /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0216E4A2603343100652CFB /* CustomTabBarController.swift */; };
+		A0216E502603402F00652CFB /* SettingTabIcon.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0216E4F2603402F00652CFB /* SettingTabIcon.xib */; };
+		A0216E532603416C00652CFB /* SettingTabIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0216E522603416C00652CFB /* SettingTabIcon.swift */; };
 		A099B4EB25B5ADCF001B5FCE /* CollectionView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A099B4EA25B5ADCF001B5FCE /* CollectionView.storyboard */; };
 		A099B4EF25B5B133001B5FCE /* HeaderAutoLayoutCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A099B4EE25B5B133001B5FCE /* HeaderAutoLayoutCollectionViewController.swift */; };
 		A0B2A502240BBA8200099E41 /* DragAnimationStep1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B2A501240BBA8200099E41 /* DragAnimationStep1ViewController.swift */; };
@@ -34,6 +36,8 @@
 		6BF542022403CB74002C47DA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A0216E452603339A00652CFB /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		A0216E4A2603343100652CFB /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		A0216E4F2603402F00652CFB /* SettingTabIcon.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTabIcon.xib; sourceTree = "<group>"; };
+		A0216E522603416C00652CFB /* SettingTabIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTabIcon.swift; sourceTree = "<group>"; };
 		A099B4EA25B5ADCF001B5FCE /* CollectionView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CollectionView.storyboard; sourceTree = "<group>"; };
 		A099B4EE25B5B133001B5FCE /* HeaderAutoLayoutCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderAutoLayoutCollectionViewController.swift; sourceTree = "<group>"; };
 		A0B2A501240BBA8200099E41 /* DragAnimationStep1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAnimationStep1ViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				A0216E4A2603343100652CFB /* CustomTabBarController.swift */,
+				A0216E4F2603402F00652CFB /* SettingTabIcon.xib */,
+				A0216E522603416C00652CFB /* SettingTabIcon.swift */,
 			);
 			path = CustomTabBar;
 			sourceTree = "<group>";
@@ -191,6 +197,7 @@
 				6BF541F72403CB5F002C47DA /* Assets.xcassets in Resources */,
 				6BF542042403CB74002C47DA /* Main.storyboard in Resources */,
 				A099B4EB25B5ADCF001B5FCE /* CollectionView.storyboard in Resources */,
+				A0216E502603402F00652CFB /* SettingTabIcon.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +216,7 @@
 				6BF542032403CB74002C47DA /* StackAnimationViewController.swift in Sources */,
 				A0F281502601E35B00C78324 /* DragAnimationFinalViewController.swift in Sources */,
 				6BF541F02403CB5F002C47DA /* SceneDelegate.swift in Sources */,
+				A0216E532603416C00652CFB /* SettingTabIcon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

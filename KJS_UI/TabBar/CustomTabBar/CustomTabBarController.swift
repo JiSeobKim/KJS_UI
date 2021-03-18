@@ -15,16 +15,12 @@ protocol AnimationTabIconView: UIView {
 class CustomTabBarController: UITabBarController {
     
     var itemWidth: CGFloat?
-    var viewList: [UIView] = []
+    var viewList: [AnimationTabIconView] = []
     
-    var selectedView: UIView? {
+    var selectedView: AnimationTabIconView? {
         didSet {
-            if selectedView != nil {
-                self.animateClick(view: selectedView!)
-            }
-            if oldValue != nil {
-                self.animateUnclick(view: oldValue!)
-            }
+            selectedView?.onAnimation()
+            oldValue?.offAnimation()
         }
     }
     
@@ -55,12 +51,9 @@ class CustomTabBarController: UITabBarController {
         guard let w = self.itemWidth else { return }
         let vWidth: CGFloat = 30
         let newX = ((w - vWidth) / 2)
-        let colors: [UIColor] = [.systemRed, .systemBlue]
         
         for row in self.tabBar.subviews {
-            let color = colors.randomElement() ?? .clear
-            let v = UIView(frame: CGRect(x: newX, y: 0, width: vWidth, height: 30))
-            v.backgroundColor = color
+            let v = SettingTabIcon(frame: CGRect(x: newX, y: 0, width: vWidth, height: 30))
             row.addSubview(v)
             self.viewList.append(v)
             let gesture = UITapGestureRecognizer(target: self, action: #selector(self.aniViewTouchEvent(_:)))
@@ -71,11 +64,15 @@ class CustomTabBarController: UITabBarController {
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         guard let index = tabBar.items?.firstIndex(of: item) else { return }
         print(index)
-        selectedView = self.viewList[index]
+        let next = self.viewList[index]
+        guard !(next === selectedView) else { return }
+        selectedView = next
     }
     
     @objc func aniViewTouchEvent(_ recognizer: UITapGestureRecognizer) {
-        guard let index = self.viewList.firstIndex(of: recognizer.view!), let item = self.tabBar.items?[index] else { return }
+        guard let convertedView = recognizer.view as? AnimationTabIconView else { return }
+        
+        guard let index = self.viewList.firstIndex(where: {$0 == convertedView}), let item = self.tabBar.items?[index] else { return }
         self.tabBar(tabBar, didSelect: item)
         self.selectedIndex = index
     }
