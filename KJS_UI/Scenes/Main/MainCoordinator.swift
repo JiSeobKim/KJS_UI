@@ -10,55 +10,37 @@ import Foundation
 import UIKit
 
 
-class MainCoordinator: CoordinatorPattern, MainViewControllerCoordinatorListner {
+class MainCoordinator: CoordinatorPattern, MainViewControllerCoordinatorListener {
     
-    var parent: CoordinatorPattern?
-    var childCoordinators: [CoordinatorPattern]
-    var navigationController: UINavigationController?
-    var presenterViewController: UIViewController?
     var viewController: UIViewController
     
-    
-    var dragAnimationPracticeCoordinator: DragAnimationPracticeCoordinator?
-    var dragAnimationBlogCoordinator: DragAnimationBlogCoordinator?
-    
-    required init(
-        parent: CoordinatorPattern? = nil,
-        navigationController: UINavigationController?,
-        presenterViewController: UIViewController?
-    ){
-        self.parent = parent
-        self.childCoordinators = []
-        self.navigationController = navigationController
-        self.presenterViewController = presenterViewController
-        
+    required init(){
         self.viewController = UIViewController.makeViewController(
             storyboardName: "Main",
             identifier: "MainVC"
         )
         
-        (viewController as? MainViewController)?.coordinatorListener = self
+        if let mainVC = viewController as? MainViewController {
+            
+            let viewModel = MainViewModel(models: [
+                .dragAnimation,
+                .dragAnimationForBlog,
+                .collectionView,
+                .tabBar
+            ])
+            viewModel.coordinatorListener = self
+            mainVC.viewModel = viewModel
+        }
     }
     
     func attachDragAnimationPractice() {
-        guard dragAnimationPracticeCoordinator == nil else { return }
-        dragAnimationPracticeCoordinator = DragAnimationPracticeCoordinator(
-            parent: self,
-            navigationController: navigationController,
-            presenterViewController: presenterViewController)
-        
-        dragAnimationPracticeCoordinator?.activeWithPush()
+        let dragAnimationPracticeCoordinator = DragAnimationPracticeCoordinator()
+        self.activeWithPush(viewController: dragAnimationPracticeCoordinator.viewController)
     }
     
     func attachDragAnimationBlog() {
-        guard dragAnimationBlogCoordinator == nil else { return }
-        dragAnimationBlogCoordinator = DragAnimationBlogCoordinator(
-            parent: self,
-            navigationController: navigationController,
-            presenterViewController: presenterViewController
-        )
-        
-        dragAnimationBlogCoordinator?.activeWithPush()
+        let dragAnimationBlogCoordinator = DragAnimationBlogCoordinator()
+        self.activeWithPush(viewController: dragAnimationBlogCoordinator.viewController)
     }
 }
 

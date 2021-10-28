@@ -8,10 +8,42 @@
 
 import Foundation
 
-protocol MainViewModelAvailable {
+protocol MainViewControllerCoordinatorListener {
     
+    func attachDragAnimationPractice()
+    func attachDragAnimationBlog()
 }
 
-class MainViewModel {
+protocol MainViewModelAvailable {
+    var coordinatorListener: MainViewControllerCoordinatorListener? { get set }
+    var cellItems: [String] { get }
     
+    init(models: [MainModel])
+    func didTapCell(index: Int)
+}
+
+class MainViewModel: MainViewModelAvailable  {
+    
+    var cellItems: [String]
+    var coordinatorListener: MainViewControllerCoordinatorListener?
+    
+    private var models: [MainModel]
+    
+    required init(models: [MainModel]) {
+        self.cellItems = models.map{$0.title}
+        self.models = models
+    }
+    
+    func didTapCell(index: Int) {
+        switch models[index] {
+        case .dragAnimation:
+            coordinatorListener?.attachDragAnimationPractice()
+        case .dragAnimationForBlog:
+            coordinatorListener?.attachDragAnimationBlog()
+        case .collectionView:
+            break
+        case .tabBar:
+            break
+        }
+    }
 }

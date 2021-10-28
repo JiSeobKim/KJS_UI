@@ -28,6 +28,8 @@
 		A0D34DCE272A7DC600791A07 /* DragAnimationBlogCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D34DCD272A7DC600791A07 /* DragAnimationBlogCoordinator.swift */; };
 		A0D34DD0272A7E6B00791A07 /* DragAnimationBlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D34DCF272A7E6B00791A07 /* DragAnimationBlogViewController.swift */; };
 		A0D34DD5272AA35300791A07 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D34DD4272AA35300791A07 /* MainViewModel.swift */; };
+		A0DF57A5272AD98700811F03 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DF57A4272AD98700811F03 /* MainModel.swift */; };
+		A0DF57A7272ADF5B00811F03 /* MainViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DF57A6272ADF5B00811F03 /* MainViewCell.swift */; };
 		A0F281502601E35B00C78324 /* DragAnimationFinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F2814F2601E35B00C78324 /* DragAnimationFinalViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +57,8 @@
 		A0D34DCD272A7DC600791A07 /* DragAnimationBlogCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAnimationBlogCoordinator.swift; sourceTree = "<group>"; };
 		A0D34DCF272A7E6B00791A07 /* DragAnimationBlogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAnimationBlogViewController.swift; sourceTree = "<group>"; };
 		A0D34DD4272AA35300791A07 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		A0DF57A4272AD98700811F03 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
+		A0DF57A6272ADF5B00811F03 /* MainViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewCell.swift; sourceTree = "<group>"; };
 		A0F2814F2601E35B00C78324 /* DragAnimationFinalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAnimationFinalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -178,7 +182,9 @@
 			children = (
 				A0D34DC5272A509400791A07 /* MainCoordinator.swift */,
 				6BF541F12403CB5F002C47DA /* MainViewController.swift */,
+				A0DF57A6272ADF5B00811F03 /* MainViewCell.swift */,
 				A0D34DD4272AA35300791A07 /* MainViewModel.swift */,
+				A0DF57A4272AD98700811F03 /* MainModel.swift */,
 				A099B4E825B5AD9E001B5FCE /* CollectionView */,
 				A0D34DCC272A7ABC00791A07 /* DragAnimationPractice */,
 				A0B2A500240BBA6700099E41 /* DragAnimationBlog */,
@@ -286,8 +292,10 @@
 				A0B2A502240BBA8200099E41 /* DragAnimationStep1ViewController.swift in Sources */,
 				A0D34DC6272A509400791A07 /* MainCoordinator.swift in Sources */,
 				6BF542032403CB74002C47DA /* StackAnimationViewController.swift in Sources */,
+				A0DF57A7272ADF5B00811F03 /* MainViewCell.swift in Sources */,
 				A0D34DC4272A4DFF00791A07 /* CoordinatorPattern.swift in Sources */,
 				A0F281502601E35B00C78324 /* DragAnimationFinalViewController.swift in Sources */,
+				A0DF57A5272AD98700811F03 /* MainModel.swift in Sources */,
 				6BF541F02403CB5F002C47DA /* SceneDelegate.swift in Sources */,
 				A0D34DCE272A7DC600791A07 /* DragAnimationBlogCoordinator.swift in Sources */,
 				A0D34DCB272A5E1100791A07 /* UIViewController+Utils.swift in Sources */,
@@ -431,6 +439,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HWY63NUUS4;
 				INFOPLIST_FILE = KJS_UI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -449,6 +458,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HWY63NUUS4;
 				INFOPLIST_FILE = KJS_UI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

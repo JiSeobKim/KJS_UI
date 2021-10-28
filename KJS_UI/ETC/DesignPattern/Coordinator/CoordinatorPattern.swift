@@ -12,30 +12,26 @@ import UIKit
 
 protocol CoordinatorPattern {
 
-    var parent: CoordinatorPattern? { get }
-    var childCoordinators: [CoordinatorPattern] { get set }
     var navigationController: UINavigationController? { get }
-    var presenterViewController: UIViewController? { get }
     var viewController: UIViewController { get }
     
-    init(
-        parent: CoordinatorPattern?,
-        navigationController: UINavigationController?,
-        presenterViewController: UIViewController?
-    )
-    
-    func activeWithPush()
-    func activeWithPresent()
+    func activeWithPush(viewController: UIViewController?)
+    func presentInsideNavigation(viewController: UIViewController?)
 }
 
 extension CoordinatorPattern {
+    var navigationController: UINavigationController? { viewController.navigationController }
     
-    func activeWithPush() {
-        guard let navi = navigationController else { return }
-        navi.pushViewController(viewController, animated: true)
+    func presentInsideNavigation(viewController: UIViewController?) {
+        guard let vc = viewController else { return }
+        let navigation = UINavigationController(rootViewController: vc)
+        self.viewController.present(navigation, animated: true, completion: nil)
     }
-    func activeWithPresent() {
-        guard let presenter = presenterViewController else { return }
-        presenter.present(viewController, animated: true, completion: nil)
+    func activeWithPush(viewController: UIViewController?) {
+        guard
+            let navi = navigationController,
+            let vc = viewController
+        else { return }
+        navi.pushViewController(vc, animated: true)
     }
 }
