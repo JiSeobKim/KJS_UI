@@ -180,7 +180,7 @@ extension StackAnimationViewController: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         
         if otherGestureRecognizer.view is UIScrollView, let pan = gestureRecognizer as? UIPanGestureRecognizer {
-            let position = pan.translation(in: self.scrollView)
+            let _ = pan.translation(in: self.scrollView)
             
             let becomeResetGesture = self.isLongPressed ? otherGestureRecognizer : gestureRecognizer
             

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		6BF541EE2403CB5F002C47DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF541ED2403CB5F002C47DA /* AppDelegate.swift */; };
 		6BF541F02403CB5F002C47DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF541EF2403CB5F002C47DA /* SceneDelegate.swift */; };
-		6BF541F22403CB5F002C47DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF541F12403CB5F002C47DA /* ViewController.swift */; };
+		6BF541F22403CB5F002C47DA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF541F12403CB5F002C47DA /* MainViewController.swift */; };
 		6BF541F72403CB5F002C47DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BF541F62403CB5F002C47DA /* Assets.xcassets */; };
 		6BF541FA2403CB5F002C47DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BF541F82403CB5F002C47DA /* LaunchScreen.storyboard */; };
 		6BF542032403CB74002C47DA /* StackAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF542012403CB74002C47DA /* StackAnimationViewController.swift */; };
@@ -21,6 +21,12 @@
 		A099B4EB25B5ADCF001B5FCE /* CollectionView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A099B4EA25B5ADCF001B5FCE /* CollectionView.storyboard */; };
 		A099B4EF25B5B133001B5FCE /* HeaderAutoLayoutCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A099B4EE25B5B133001B5FCE /* HeaderAutoLayoutCollectionViewController.swift */; };
 		A0B2A502240BBA8200099E41 /* DragAnimationStep1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B2A501240BBA8200099E41 /* DragAnimationStep1ViewController.swift */; };
+		A0D34DC4272A4DFF00791A07 /* CoordinatorPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D34DC3272A4DFF00791A07 /* CoordinatorPattern.swift */; };
+		A0D34DC6272A509400791A07 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D34DC5272A509400791A07 /* MainCoordinator.swift */; };
+		A0D34DC8272A5AB700791A07 /* DragAnimationPracticeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D34DC7272A5AB700791A07 /* DragAnimationPracticeCoordinator.swift */; };
+		A0D34DCB272A5E1100791A07 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D34DCA272A5E1100791A07 /* UIViewController+Utils.swift */; };
+		A0D34DCE272A7DC600791A07 /* DragAnimationBlogCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D34DCD272A7DC600791A07 /* DragAnimationBlogCoordinator.swift */; };
+		A0D34DD0272A7E6B00791A07 /* DragAnimationBlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D34DCF272A7E6B00791A07 /* DragAnimationBlogViewController.swift */; };
 		A0F281502601E35B00C78324 /* DragAnimationFinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F2814F2601E35B00C78324 /* DragAnimationFinalViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +34,7 @@
 		6BF541EA2403CB5F002C47DA /* KJS_UI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KJS_UI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BF541ED2403CB5F002C47DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6BF541EF2403CB5F002C47DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6BF541F12403CB5F002C47DA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6BF541F12403CB5F002C47DA /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		6BF541F62403CB5F002C47DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6BF541F92403CB5F002C47DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6BF541FB2403CB5F002C47DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -41,6 +47,12 @@
 		A099B4EA25B5ADCF001B5FCE /* CollectionView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CollectionView.storyboard; sourceTree = "<group>"; };
 		A099B4EE25B5B133001B5FCE /* HeaderAutoLayoutCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderAutoLayoutCollectionViewController.swift; sourceTree = "<group>"; };
 		A0B2A501240BBA8200099E41 /* DragAnimationStep1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAnimationStep1ViewController.swift; sourceTree = "<group>"; };
+		A0D34DC3272A4DFF00791A07 /* CoordinatorPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorPattern.swift; sourceTree = "<group>"; };
+		A0D34DC5272A509400791A07 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		A0D34DC7272A5AB700791A07 /* DragAnimationPracticeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAnimationPracticeCoordinator.swift; sourceTree = "<group>"; };
+		A0D34DCA272A5E1100791A07 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
+		A0D34DCD272A7DC600791A07 /* DragAnimationBlogCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAnimationBlogCoordinator.swift; sourceTree = "<group>"; };
+		A0D34DCF272A7E6B00791A07 /* DragAnimationBlogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAnimationBlogViewController.swift; sourceTree = "<group>"; };
 		A0F2814F2601E35B00C78324 /* DragAnimationFinalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAnimationFinalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,10 +88,14 @@
 			children = (
 				6BF541ED2403CB5F002C47DA /* AppDelegate.swift */,
 				6BF541EF2403CB5F002C47DA /* SceneDelegate.swift */,
-				6BF541F12403CB5F002C47DA /* ViewController.swift */,
+				A0D34DC5272A509400791A07 /* MainCoordinator.swift */,
+				6BF541F12403CB5F002C47DA /* MainViewController.swift */,
+				A0D34DC1272A4DE900791A07 /* DesignPattern */,
 				A099B4E825B5AD9E001B5FCE /* CollectionView */,
-				A0B2A4FF240BBA5200099E41 /* DragAnimation */,
+				A0D34DCC272A7ABC00791A07 /* DragAnimationPractice */,
+				A0B2A500240BBA6700099E41 /* DragAnimationBlog */,
 				A0216E482603341100652CFB /* TabBar */,
+				A0D34DC9272A5DDF00791A07 /* Utils */,
 				6BF542022403CB74002C47DA /* Main.storyboard */,
 				A099B4EA25B5ADCF001B5FCE /* CollectionView.storyboard */,
 				A0216E452603339A00652CFB /* TabBar.storyboard */,
@@ -116,22 +132,48 @@
 			path = CollectionView;
 			sourceTree = "<group>";
 		};
-		A0B2A4FF240BBA5200099E41 /* DragAnimation */ = {
+		A0B2A500240BBA6700099E41 /* DragAnimationBlog */ = {
 			isa = PBXGroup;
 			children = (
-				A0B2A500240BBA6700099E41 /* VC */,
-			);
-			path = DragAnimation;
-			sourceTree = "<group>";
-		};
-		A0B2A500240BBA6700099E41 /* VC */ = {
-			isa = PBXGroup;
-			children = (
-				6BF542012403CB74002C47DA /* StackAnimationViewController.swift */,
 				A0B2A501240BBA8200099E41 /* DragAnimationStep1ViewController.swift */,
 				A0F2814F2601E35B00C78324 /* DragAnimationFinalViewController.swift */,
+				A0D34DCD272A7DC600791A07 /* DragAnimationBlogCoordinator.swift */,
+				A0D34DCF272A7E6B00791A07 /* DragAnimationBlogViewController.swift */,
 			);
-			path = VC;
+			path = DragAnimationBlog;
+			sourceTree = "<group>";
+		};
+		A0D34DC1272A4DE900791A07 /* DesignPattern */ = {
+			isa = PBXGroup;
+			children = (
+				A0D34DC2272A4DF300791A07 /* Coordinator */,
+			);
+			path = DesignPattern;
+			sourceTree = "<group>";
+		};
+		A0D34DC2272A4DF300791A07 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				A0D34DC3272A4DFF00791A07 /* CoordinatorPattern.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		A0D34DC9272A5DDF00791A07 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A0D34DCA272A5E1100791A07 /* UIViewController+Utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		A0D34DCC272A7ABC00791A07 /* DragAnimationPractice */ = {
+			isa = PBXGroup;
+			children = (
+				A0D34DC7272A5AB700791A07 /* DragAnimationPracticeCoordinator.swift */,
+				6BF542012403CB74002C47DA /* StackAnimationViewController.swift */,
+			);
+			path = DragAnimationPractice;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,13 +251,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				A099B4EF25B5B133001B5FCE /* HeaderAutoLayoutCollectionViewController.swift in Sources */,
-				6BF541F22403CB5F002C47DA /* ViewController.swift in Sources */,
+				A0D34DD0272A7E6B00791A07 /* DragAnimationBlogViewController.swift in Sources */,
+				6BF541F22403CB5F002C47DA /* MainViewController.swift in Sources */,
 				A0216E4B2603343100652CFB /* CustomTabBarController.swift in Sources */,
+				A0D34DC8272A5AB700791A07 /* DragAnimationPracticeCoordinator.swift in Sources */,
 				6BF541EE2403CB5F002C47DA /* AppDelegate.swift in Sources */,
 				A0B2A502240BBA8200099E41 /* DragAnimationStep1ViewController.swift in Sources */,
+				A0D34DC6272A509400791A07 /* MainCoordinator.swift in Sources */,
 				6BF542032403CB74002C47DA /* StackAnimationViewController.swift in Sources */,
+				A0D34DC4272A4DFF00791A07 /* CoordinatorPattern.swift in Sources */,
 				A0F281502601E35B00C78324 /* DragAnimationFinalViewController.swift in Sources */,
 				6BF541F02403CB5F002C47DA /* SceneDelegate.swift in Sources */,
+				A0D34DCE272A7DC600791A07 /* DragAnimationBlogCoordinator.swift in Sources */,
+				A0D34DCB272A5E1100791A07 /* UIViewController+Utils.swift in Sources */,
 				A0216E532603416C00652CFB /* SettingTabIcon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
