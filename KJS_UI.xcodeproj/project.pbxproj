@@ -27,6 +27,7 @@
 		A0D34DCB272A5E1100791A07 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D34DCA272A5E1100791A07 /* UIViewController+Utils.swift */; };
 		A0D34DCE272A7DC600791A07 /* DragAnimationBlogCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D34DCD272A7DC600791A07 /* DragAnimationBlogCoordinator.swift */; };
 		A0D34DD0272A7E6B00791A07 /* DragAnimationBlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D34DCF272A7E6B00791A07 /* DragAnimationBlogViewController.swift */; };
+		A0D34DD5272AA35300791A07 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D34DD4272AA35300791A07 /* MainViewModel.swift */; };
 		A0F281502601E35B00C78324 /* DragAnimationFinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F2814F2601E35B00C78324 /* DragAnimationFinalViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		A0D34DCA272A5E1100791A07 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
 		A0D34DCD272A7DC600791A07 /* DragAnimationBlogCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAnimationBlogCoordinator.swift; sourceTree = "<group>"; };
 		A0D34DCF272A7E6B00791A07 /* DragAnimationBlogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAnimationBlogViewController.swift; sourceTree = "<group>"; };
+		A0D34DD4272AA35300791A07 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		A0F2814F2601E35B00C78324 /* DragAnimationFinalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAnimationFinalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,13 +90,8 @@
 			children = (
 				6BF541ED2403CB5F002C47DA /* AppDelegate.swift */,
 				6BF541EF2403CB5F002C47DA /* SceneDelegate.swift */,
-				A0D34DC5272A509400791A07 /* MainCoordinator.swift */,
-				6BF541F12403CB5F002C47DA /* MainViewController.swift */,
-				A0D34DC1272A4DE900791A07 /* DesignPattern */,
-				A099B4E825B5AD9E001B5FCE /* CollectionView */,
-				A0D34DCC272A7ABC00791A07 /* DragAnimationPractice */,
-				A0B2A500240BBA6700099E41 /* DragAnimationBlog */,
-				A0216E482603341100652CFB /* TabBar */,
+				A0D34DD2272A9DB800791A07 /* Scenes */,
+				A0D34DD3272A9DD800791A07 /* ETC */,
 				A0D34DC9272A5DDF00791A07 /* Utils */,
 				6BF542022403CB74002C47DA /* Main.storyboard */,
 				A099B4EA25B5ADCF001B5FCE /* CollectionView.storyboard */,
@@ -174,6 +171,36 @@
 				6BF542012403CB74002C47DA /* StackAnimationViewController.swift */,
 			);
 			path = DragAnimationPractice;
+			sourceTree = "<group>";
+		};
+		A0D34DD1272A9DA200791A07 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				A0D34DC5272A509400791A07 /* MainCoordinator.swift */,
+				6BF541F12403CB5F002C47DA /* MainViewController.swift */,
+				A0D34DD4272AA35300791A07 /* MainViewModel.swift */,
+				A099B4E825B5AD9E001B5FCE /* CollectionView */,
+				A0D34DCC272A7ABC00791A07 /* DragAnimationPractice */,
+				A0B2A500240BBA6700099E41 /* DragAnimationBlog */,
+				A0216E482603341100652CFB /* TabBar */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		A0D34DD2272A9DB800791A07 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				A0D34DD1272A9DA200791A07 /* Main */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		A0D34DD3272A9DD800791A07 /* ETC */ = {
+			isa = PBXGroup;
+			children = (
+				A0D34DC1272A4DE900791A07 /* DesignPattern */,
+			);
+			path = ETC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,6 +292,7 @@
 				A0D34DCE272A7DC600791A07 /* DragAnimationBlogCoordinator.swift in Sources */,
 				A0D34DCB272A5E1100791A07 /* UIViewController+Utils.swift in Sources */,
 				A0216E532603416C00652CFB /* SettingTabIcon.swift in Sources */,
+				A0D34DD5272AA35300791A07 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

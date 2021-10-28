@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DragAnimationCoordinator: CoordinatorPattern {
+class DragAnimationPracticeCoordinator: CoordinatorPattern {
     
     var parent: CoordinatorPattern?
     var childCoordinators: [CoordinatorPattern]

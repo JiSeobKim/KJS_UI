@@ -19,7 +19,8 @@ class MainCoordinator: CoordinatorPattern, MainViewControllerCoordinatorListner 
     var viewController: UIViewController
     
     
-    var dragAnimationCoordinator: DragAnimationCoordinator?
+    var dragAnimationPracticeCoordinator: DragAnimationPracticeCoordinator?
+    var dragAnimationBlogCoordinator: DragAnimationBlogCoordinator?
     
     required init(
         parent: CoordinatorPattern? = nil,
@@ -40,15 +41,24 @@ class MainCoordinator: CoordinatorPattern, MainViewControllerCoordinatorListner 
     }
     
     func attachDragAnimationPractice() {
-        guard dragAnimationCoordinator == nil else { return }
-        dragAnimationCoordinator = DragAnimationCoordinator(
+        guard dragAnimationPracticeCoordinator == nil else { return }
+        dragAnimationPracticeCoordinator = DragAnimationPracticeCoordinator(
             parent: self,
             navigationController: navigationController,
             presenterViewController: presenterViewController)
+        
+        dragAnimationPracticeCoordinator?.activeWithPush()
     }
     
     func attachDragAnimationBlog() {
+        guard dragAnimationBlogCoordinator == nil else { return }
+        dragAnimationBlogCoordinator = DragAnimationBlogCoordinator(
+            parent: self,
+            navigationController: navigationController,
+            presenterViewController: presenterViewController
+        )
         
+        dragAnimationBlogCoordinator?.activeWithPush()
     }
 }
 
