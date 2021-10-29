@@ -10,9 +10,12 @@ import UIKit
 
 
 class DragAnimationBlogCoordinator: CoordinatorPattern, DragAnimationBlogCoordinatorListener {
-    var viewController: UIViewController
+    
+    var childCoordinators: [CoordinatorPattern]
+    weak var viewController: UIViewController?
     
     required init() {
+        self.childCoordinators = []
         self.viewController = .makeViewController(storyboardName: "Main", identifier: "DragAnimationBlogVC")
         (viewController as? DragAnimationBlogViewController)?.coordinatorListener = self
     }

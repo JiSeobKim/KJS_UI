@@ -10,16 +10,17 @@ import Foundation
 
 protocol MainViewControllerCoordinatorListener {
     
+    func detachMainView()
     func attachDragAnimationPractice()
     func attachDragAnimationBlog()
+    func attachCollectionView()
 }
 
-protocol MainViewModelAvailable {
+protocol MainViewModelAvailable: MainViewEventListener {
     var coordinatorListener: MainViewControllerCoordinatorListener? { get set }
     var cellItems: [String] { get }
     
     init(models: [MainModel])
-    func didTapCell(index: Int)
 }
 
 class MainViewModel: MainViewModelAvailable  {
@@ -34,6 +35,10 @@ class MainViewModel: MainViewModelAvailable  {
         self.models = models
     }
     
+    func viewDidDisappear() {
+        coordinatorListener?.detachMainView()
+    }
+    
     func didTapCell(index: Int) {
         switch models[index] {
         case .dragAnimation:
@@ -41,7 +46,7 @@ class MainViewModel: MainViewModelAvailable  {
         case .dragAnimationForBlog:
             coordinatorListener?.attachDragAnimationBlog()
         case .collectionView:
-            break
+            coordinatorListener?.attachCollectionView()
         case .tabBar:
             break
         }

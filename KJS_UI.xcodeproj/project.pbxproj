@@ -21,6 +21,10 @@
 		A099B4EB25B5ADCF001B5FCE /* CollectionView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A099B4EA25B5ADCF001B5FCE /* CollectionView.storyboard */; };
 		A099B4EF25B5B133001B5FCE /* HeaderAutoLayoutCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A099B4EE25B5B133001B5FCE /* HeaderAutoLayoutCollectionViewController.swift */; };
 		A0B2A502240BBA8200099E41 /* DragAnimationStep1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B2A501240BBA8200099E41 /* DragAnimationStep1ViewController.swift */; };
+		A0B593EB272BAB0E00AE034D /* CollectionViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B593EA272BAB0E00AE034D /* CollectionViewViewController.swift */; };
+		A0B593ED272BAB7C00AE034D /* CollectionViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B593EC272BAB7C00AE034D /* CollectionViewCoordinator.swift */; };
+		A0B593EF272BACBD00AE034D /* UIStackView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B593EE272BACBD00AE034D /* UIStackView+Utils.swift */; };
+		A0B593F1272BB17200AE034D /* CollectionViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B593F0272BB17200AE034D /* CollectionViewViewModel.swift */; };
 		A0D34DC4272A4DFF00791A07 /* CoordinatorPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D34DC3272A4DFF00791A07 /* CoordinatorPattern.swift */; };
 		A0D34DC6272A509400791A07 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D34DC5272A509400791A07 /* MainCoordinator.swift */; };
 		A0D34DC8272A5AB700791A07 /* DragAnimationPracticeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D34DC7272A5AB700791A07 /* DragAnimationPracticeCoordinator.swift */; };
@@ -50,6 +54,10 @@
 		A099B4EA25B5ADCF001B5FCE /* CollectionView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CollectionView.storyboard; sourceTree = "<group>"; };
 		A099B4EE25B5B133001B5FCE /* HeaderAutoLayoutCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderAutoLayoutCollectionViewController.swift; sourceTree = "<group>"; };
 		A0B2A501240BBA8200099E41 /* DragAnimationStep1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAnimationStep1ViewController.swift; sourceTree = "<group>"; };
+		A0B593EA272BAB0E00AE034D /* CollectionViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewViewController.swift; sourceTree = "<group>"; };
+		A0B593EC272BAB7C00AE034D /* CollectionViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCoordinator.swift; sourceTree = "<group>"; };
+		A0B593EE272BACBD00AE034D /* UIStackView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Utils.swift"; sourceTree = "<group>"; };
+		A0B593F0272BB17200AE034D /* CollectionViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewViewModel.swift; sourceTree = "<group>"; };
 		A0D34DC3272A4DFF00791A07 /* CoordinatorPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorPattern.swift; sourceTree = "<group>"; };
 		A0D34DC5272A509400791A07 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		A0D34DC7272A5AB700791A07 /* DragAnimationPracticeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAnimationPracticeCoordinator.swift; sourceTree = "<group>"; };
@@ -129,6 +137,9 @@
 			isa = PBXGroup;
 			children = (
 				A099B4EE25B5B133001B5FCE /* HeaderAutoLayoutCollectionViewController.swift */,
+				A0B593EA272BAB0E00AE034D /* CollectionViewViewController.swift */,
+				A0B593EC272BAB7C00AE034D /* CollectionViewCoordinator.swift */,
+				A0B593F0272BB17200AE034D /* CollectionViewViewModel.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -164,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				A0D34DCA272A5E1100791A07 /* UIViewController+Utils.swift */,
+				A0B593EE272BACBD00AE034D /* UIStackView+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -185,9 +197,9 @@
 				A0DF57A6272ADF5B00811F03 /* MainViewCell.swift */,
 				A0D34DD4272AA35300791A07 /* MainViewModel.swift */,
 				A0DF57A4272AD98700811F03 /* MainModel.swift */,
-				A099B4E825B5AD9E001B5FCE /* CollectionView */,
 				A0D34DCC272A7ABC00791A07 /* DragAnimationPractice */,
 				A0B2A500240BBA6700099E41 /* DragAnimationBlog */,
+				A099B4E825B5AD9E001B5FCE /* CollectionView */,
 				A0216E482603341100652CFB /* TabBar */,
 			);
 			path = Main;
@@ -289,12 +301,16 @@
 				A0216E4B2603343100652CFB /* CustomTabBarController.swift in Sources */,
 				A0D34DC8272A5AB700791A07 /* DragAnimationPracticeCoordinator.swift in Sources */,
 				6BF541EE2403CB5F002C47DA /* AppDelegate.swift in Sources */,
+				A0B593EB272BAB0E00AE034D /* CollectionViewViewController.swift in Sources */,
 				A0B2A502240BBA8200099E41 /* DragAnimationStep1ViewController.swift in Sources */,
 				A0D34DC6272A509400791A07 /* MainCoordinator.swift in Sources */,
 				6BF542032403CB74002C47DA /* StackAnimationViewController.swift in Sources */,
 				A0DF57A7272ADF5B00811F03 /* MainViewCell.swift in Sources */,
 				A0D34DC4272A4DFF00791A07 /* CoordinatorPattern.swift in Sources */,
 				A0F281502601E35B00C78324 /* DragAnimationFinalViewController.swift in Sources */,
+				A0B593ED272BAB7C00AE034D /* CollectionViewCoordinator.swift in Sources */,
+				A0B593EF272BACBD00AE034D /* UIStackView+Utils.swift in Sources */,
+				A0B593F1272BB17200AE034D /* CollectionViewViewModel.swift in Sources */,
 				A0DF57A5272AD98700811F03 /* MainModel.swift in Sources */,
 				6BF541F02403CB5F002C47DA /* SceneDelegate.swift in Sources */,
 				A0D34DCE272A7DC600791A07 /* DragAnimationBlogCoordinator.swift in Sources */,

@@ -9,6 +9,12 @@
 import UIKit
 
 
+protocol MainViewEventListener {
+    
+    func viewDidDisappear()
+    func didTapCell(index: Int)
+}
+
 class MainViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -25,6 +31,11 @@ class MainViewController: UIViewController {
         super.viewWillAppear(animated)
         view.layoutIfNeeded()
         setCollectionView()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        viewModel.viewDidDisappear()
     }
     
     private func setCollectionView() {

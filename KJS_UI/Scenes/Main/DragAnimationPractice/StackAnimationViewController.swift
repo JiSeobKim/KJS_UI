@@ -31,6 +31,10 @@ class StackAnimationViewController: UIViewController {
                 self.scrollView = ($0 as! UIScrollView)
             }
         }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
         
     }
     

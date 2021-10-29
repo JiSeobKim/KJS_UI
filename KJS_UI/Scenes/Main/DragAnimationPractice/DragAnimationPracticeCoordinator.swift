@@ -8,11 +8,20 @@
 
 import UIKit
 
+protocol DragAnimationPracticeCoordinatorDelegate {
+    func detachDragAnimationPracticeCoordinator()
+}
+
 class DragAnimationPracticeCoordinator: CoordinatorPattern {
     
-    var viewController: UIViewController
+    var childCoordinators: [CoordinatorPattern]
+    private var delegate: DragAnimationPracticeCoordinatorDelegate
     
-    required init() {
+    weak var viewController: UIViewController?
+    
+    required init(delegate: DragAnimationPracticeCoordinatorDelegate) {
+        self.delegate = delegate
+        self.childCoordinators = []
         self.viewController = UIViewController.makeViewController(storyboardName: "Main", identifier: "DragAnimationVC")
     }
 }

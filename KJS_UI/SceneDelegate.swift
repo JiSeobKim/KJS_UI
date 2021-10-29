@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let navi = UINavigationController()
         navi.navigationBar.prefersLargeTitles = true
         let mainCoordinator = MainCoordinator()
-        navi.setViewControllers([mainCoordinator.viewController], animated: false)
+        navi.setViewControllers([mainCoordinator.viewController!], animated: false)
         
         window?.rootViewController = navi
     }
