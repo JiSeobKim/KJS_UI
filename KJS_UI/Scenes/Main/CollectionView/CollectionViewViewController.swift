@@ -10,6 +10,7 @@ import UIKit
 
 protocol CollectionViewPresentableListener {
     func didTapHeaderAutoLayout()
+    func didTapDiffableDataSource()
 }
 
 class CollectionViewViewController: UIViewController {
@@ -20,11 +21,25 @@ class CollectionViewViewController: UIViewController {
     
     private lazy var headerAutoCollectionButton: UIButton = {
         let button = UIButton(type: .system)
-        button.addTarget(self,
-                         action: #selector(didTapHeaderAutoCollection),
-                         for: .touchUpInside)
+        button.addTarget(
+            self,
+            action: #selector(didTapHeaderAutoCollection),
+            for: .touchUpInside
+        )
         
-        button.setTitle("headerAutoCollection", for: .normal)
+        button.setTitle("HeaderAutoCollection", for: .normal)
+        return button
+    }()
+
+    private lazy var diffableDataSourceButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.addTarget(
+            self,
+            action: #selector(didTapDiffableDataSource),
+            for: .touchUpInside
+        )
+
+        button.setTitle("Diffable DataSource", for: .normal)
         return button
     }()
     
@@ -46,6 +61,7 @@ class CollectionViewViewController: UIViewController {
         view.backgroundColor = .white
         
         stackView.addArrangedSubview(headerAutoCollectionButton)
+        stackView.addArrangedSubview(diffableDataSourceButton)
         
         NSLayoutConstraint.activate([
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -56,5 +72,10 @@ class CollectionViewViewController: UIViewController {
     @objc
     private func didTapHeaderAutoCollection() {
         viewModel.didTapHeaderAutoLayout()
+    }
+
+    @objc
+    private func didTapDiffableDataSource() {
+        viewModel.didTapDiffableDataSource()
     }
 }

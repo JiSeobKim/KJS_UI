@@ -10,6 +10,7 @@ import Foundation
 
 protocol CollectionViewCoordinatorListener {
     func attachHeaderAutoLayoutCollection()
+    func attachDiffableDataSource()
 }
 
 protocol CollectionViewViewModelAvailable: CollectionViewPresentableListener {
@@ -25,5 +26,9 @@ class CollectionViewViewModel: CollectionViewViewModelAvailable {
     
     func didTapHeaderAutoLayout() {
         coordinatorListener.attachHeaderAutoLayoutCollection()
+    }
+
+    func didTapDiffableDataSource() {
+        coordinatorListener.attachDiffableDataSource()
     }
 }

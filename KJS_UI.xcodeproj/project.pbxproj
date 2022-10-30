@@ -17,10 +17,14 @@
 		A002CAD4290E94E600796A25 /* HeaderAutoLayoutCollectionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A002CAD3290E94E600796A25 /* HeaderAutoLayoutCollectionCoordinator.swift */; };
 		A002CAD6290E964A00796A25 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A002CAD5290E964A00796A25 /* TabBarViewController.swift */; };
 		A002CAD8290E968200796A25 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A002CAD7290E968200796A25 /* TabBarCoordinator.swift */; };
+		A002CADB290E98EE00796A25 /* DiffableDataSourceCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A002CADA290E98EE00796A25 /* DiffableDataSourceCollectionVC.swift */; };
+		A002CADD290E992800796A25 /* DiffableDataSourceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A002CADC290E992800796A25 /* DiffableDataSourceCoordinator.swift */; };
+		A002CADF290E99DA00796A25 /* DiffableDataSourceCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A002CADE290E99DA00796A25 /* DiffableDataSourceCollectionCell.swift */; };
 		A0216E462603339A00652CFB /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0216E452603339A00652CFB /* TabBar.storyboard */; };
 		A0216E4B2603343100652CFB /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0216E4A2603343100652CFB /* CustomTabBarController.swift */; };
 		A0216E502603402F00652CFB /* SettingTabIcon.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0216E4F2603402F00652CFB /* SettingTabIcon.xib */; };
 		A0216E532603416C00652CFB /* SettingTabIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0216E522603416C00652CFB /* SettingTabIcon.swift */; };
+		A0266911290EBC1E0018501C /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0266910290EBC1E0018501C /* UIView+Utils.swift */; };
 		A099B4EB25B5ADCF001B5FCE /* CollectionView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A099B4EA25B5ADCF001B5FCE /* CollectionView.storyboard */; };
 		A099B4EF25B5B133001B5FCE /* HeaderAutoLayoutCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A099B4EE25B5B133001B5FCE /* HeaderAutoLayoutCollectionViewController.swift */; };
 		A0B2A502240BBA8200099E41 /* DragAnimationStep1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B2A501240BBA8200099E41 /* DragAnimationStep1ViewController.swift */; };
@@ -53,10 +57,14 @@
 		A002CAD3290E94E600796A25 /* HeaderAutoLayoutCollectionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderAutoLayoutCollectionCoordinator.swift; sourceTree = "<group>"; };
 		A002CAD5290E964A00796A25 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		A002CAD7290E968200796A25 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
+		A002CADA290E98EE00796A25 /* DiffableDataSourceCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffableDataSourceCollectionVC.swift; sourceTree = "<group>"; };
+		A002CADC290E992800796A25 /* DiffableDataSourceCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffableDataSourceCoordinator.swift; sourceTree = "<group>"; };
+		A002CADE290E99DA00796A25 /* DiffableDataSourceCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffableDataSourceCollectionCell.swift; sourceTree = "<group>"; };
 		A0216E452603339A00652CFB /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		A0216E4A2603343100652CFB /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		A0216E4F2603402F00652CFB /* SettingTabIcon.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTabIcon.xib; sourceTree = "<group>"; };
 		A0216E522603416C00652CFB /* SettingTabIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTabIcon.swift; sourceTree = "<group>"; };
+		A0266910290EBC1E0018501C /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
 		A099B4EA25B5ADCF001B5FCE /* CollectionView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CollectionView.storyboard; sourceTree = "<group>"; };
 		A099B4EE25B5B133001B5FCE /* HeaderAutoLayoutCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderAutoLayoutCollectionViewController.swift; sourceTree = "<group>"; };
 		A0B2A501240BBA8200099E41 /* DragAnimationStep1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAnimationStep1ViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +138,16 @@
 			path = HeaderAutoLayoutCollectionView;
 			sourceTree = "<group>";
 		};
+		A002CAD9290E98B700796A25 /* DiffableDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				A002CADA290E98EE00796A25 /* DiffableDataSourceCollectionVC.swift */,
+				A002CADE290E99DA00796A25 /* DiffableDataSourceCollectionCell.swift */,
+				A002CADC290E992800796A25 /* DiffableDataSourceCoordinator.swift */,
+			);
+			path = DiffableDataSource;
+			sourceTree = "<group>";
+		};
 		A0216E482603341100652CFB /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +171,7 @@
 		A099B4E825B5AD9E001B5FCE /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				A002CAD9290E98B700796A25 /* DiffableDataSource */,
 				A002CAD0290E92F200796A25 /* HeaderAutoLayoutCollectionView */,
 				A0B593EA272BAB0E00AE034D /* CollectionViewViewController.swift */,
 				A0B593EC272BAB7C00AE034D /* CollectionViewCoordinator.swift */,
@@ -193,6 +212,7 @@
 			children = (
 				A0D34DCA272A5E1100791A07 /* UIViewController+Utils.swift */,
 				A0B593EE272BACBD00AE034D /* UIStackView+Utils.swift */,
+				A0266910290EBC1E0018501C /* UIView+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -315,6 +335,7 @@
 				A099B4EF25B5B133001B5FCE /* HeaderAutoLayoutCollectionViewController.swift in Sources */,
 				A0D34DD0272A7E6B00791A07 /* DragAnimationBlogViewController.swift in Sources */,
 				6BF541F22403CB5F002C47DA /* MainViewController.swift in Sources */,
+				A0266911290EBC1E0018501C /* UIView+Utils.swift in Sources */,
 				A002CAD8290E968200796A25 /* TabBarCoordinator.swift in Sources */,
 				A0216E4B2603343100652CFB /* CustomTabBarController.swift in Sources */,
 				A0D34DC8272A5AB700791A07 /* DragAnimationPracticeCoordinator.swift in Sources */,
@@ -326,16 +347,19 @@
 				A0DF57A7272ADF5B00811F03 /* MainViewCell.swift in Sources */,
 				A0D34DC4272A4DFF00791A07 /* CoordinatorPattern.swift in Sources */,
 				A0F281502601E35B00C78324 /* DragAnimationFinalViewController.swift in Sources */,
+				A002CADD290E992800796A25 /* DiffableDataSourceCoordinator.swift in Sources */,
 				A0B593ED272BAB7C00AE034D /* CollectionViewCoordinator.swift in Sources */,
 				A0B593EF272BACBD00AE034D /* UIStackView+Utils.swift in Sources */,
 				A0B593F1272BB17200AE034D /* CollectionViewViewModel.swift in Sources */,
 				A002CAD6290E964A00796A25 /* TabBarViewController.swift in Sources */,
 				A0DF57A5272AD98700811F03 /* MainModel.swift in Sources */,
 				6BF541F02403CB5F002C47DA /* SceneDelegate.swift in Sources */,
+				A002CADF290E99DA00796A25 /* DiffableDataSourceCollectionCell.swift in Sources */,
 				A0D34DCE272A7DC600791A07 /* DragAnimationBlogCoordinator.swift in Sources */,
 				A0D34DCB272A5E1100791A07 /* UIViewController+Utils.swift in Sources */,
 				A0216E532603416C00652CFB /* SettingTabIcon.swift in Sources */,
 				A002CAD4290E94E600796A25 /* HeaderAutoLayoutCollectionCoordinator.swift in Sources */,
+				A002CADB290E98EE00796A25 /* DiffableDataSourceCollectionVC.swift in Sources */,
 				A0D34DD5272AA35300791A07 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -473,7 +497,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HWY63NUUS4;
+				DEVELOPMENT_TEAM = 689KAW4595;
 				INFOPLIST_FILE = KJS_UI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -492,7 +516,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HWY63NUUS4;
+				DEVELOPMENT_TEAM = 689KAW4595;
 				INFOPLIST_FILE = KJS_UI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
