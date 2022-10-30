@@ -14,6 +14,9 @@
 		6BF541FA2403CB5F002C47DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BF541F82403CB5F002C47DA /* LaunchScreen.storyboard */; };
 		6BF542032403CB74002C47DA /* StackAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF542012403CB74002C47DA /* StackAnimationViewController.swift */; };
 		6BF542042403CB74002C47DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BF542022403CB74002C47DA /* Main.storyboard */; };
+		A002CAD4290E94E600796A25 /* HeaderAutoLayoutCollectionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A002CAD3290E94E600796A25 /* HeaderAutoLayoutCollectionCoordinator.swift */; };
+		A002CAD6290E964A00796A25 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A002CAD5290E964A00796A25 /* TabBarViewController.swift */; };
+		A002CAD8290E968200796A25 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A002CAD7290E968200796A25 /* TabBarCoordinator.swift */; };
 		A0216E462603339A00652CFB /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0216E452603339A00652CFB /* TabBar.storyboard */; };
 		A0216E4B2603343100652CFB /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0216E4A2603343100652CFB /* CustomTabBarController.swift */; };
 		A0216E502603402F00652CFB /* SettingTabIcon.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0216E4F2603402F00652CFB /* SettingTabIcon.xib */; };
@@ -47,6 +50,9 @@
 		6BF541FB2403CB5F002C47DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BF542012403CB74002C47DA /* StackAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackAnimationViewController.swift; sourceTree = "<group>"; };
 		6BF542022403CB74002C47DA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		A002CAD3290E94E600796A25 /* HeaderAutoLayoutCollectionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderAutoLayoutCollectionCoordinator.swift; sourceTree = "<group>"; };
+		A002CAD5290E964A00796A25 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		A002CAD7290E968200796A25 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		A0216E452603339A00652CFB /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		A0216E4A2603343100652CFB /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		A0216E4F2603402F00652CFB /* SettingTabIcon.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTabIcon.xib; sourceTree = "<group>"; };
@@ -115,10 +121,21 @@
 			path = KJS_UI;
 			sourceTree = "<group>";
 		};
+		A002CAD0290E92F200796A25 /* HeaderAutoLayoutCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				A099B4EE25B5B133001B5FCE /* HeaderAutoLayoutCollectionViewController.swift */,
+				A002CAD3290E94E600796A25 /* HeaderAutoLayoutCollectionCoordinator.swift */,
+			);
+			path = HeaderAutoLayoutCollectionView;
+			sourceTree = "<group>";
+		};
 		A0216E482603341100652CFB /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
 				A0216E492603341A00652CFB /* CustomTabBar */,
+				A002CAD5290E964A00796A25 /* TabBarViewController.swift */,
+				A002CAD7290E968200796A25 /* TabBarCoordinator.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -136,7 +153,7 @@
 		A099B4E825B5AD9E001B5FCE /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				A099B4EE25B5B133001B5FCE /* HeaderAutoLayoutCollectionViewController.swift */,
+				A002CAD0290E92F200796A25 /* HeaderAutoLayoutCollectionView */,
 				A0B593EA272BAB0E00AE034D /* CollectionViewViewController.swift */,
 				A0B593EC272BAB7C00AE034D /* CollectionViewCoordinator.swift */,
 				A0B593F0272BB17200AE034D /* CollectionViewViewModel.swift */,
@@ -298,6 +315,7 @@
 				A099B4EF25B5B133001B5FCE /* HeaderAutoLayoutCollectionViewController.swift in Sources */,
 				A0D34DD0272A7E6B00791A07 /* DragAnimationBlogViewController.swift in Sources */,
 				6BF541F22403CB5F002C47DA /* MainViewController.swift in Sources */,
+				A002CAD8290E968200796A25 /* TabBarCoordinator.swift in Sources */,
 				A0216E4B2603343100652CFB /* CustomTabBarController.swift in Sources */,
 				A0D34DC8272A5AB700791A07 /* DragAnimationPracticeCoordinator.swift in Sources */,
 				6BF541EE2403CB5F002C47DA /* AppDelegate.swift in Sources */,
@@ -311,11 +329,13 @@
 				A0B593ED272BAB7C00AE034D /* CollectionViewCoordinator.swift in Sources */,
 				A0B593EF272BACBD00AE034D /* UIStackView+Utils.swift in Sources */,
 				A0B593F1272BB17200AE034D /* CollectionViewViewModel.swift in Sources */,
+				A002CAD6290E964A00796A25 /* TabBarViewController.swift in Sources */,
 				A0DF57A5272AD98700811F03 /* MainModel.swift in Sources */,
 				6BF541F02403CB5F002C47DA /* SceneDelegate.swift in Sources */,
 				A0D34DCE272A7DC600791A07 /* DragAnimationBlogCoordinator.swift in Sources */,
 				A0D34DCB272A5E1100791A07 /* UIViewController+Utils.swift in Sources */,
 				A0216E532603416C00652CFB /* SettingTabIcon.swift in Sources */,
+				A002CAD4290E94E600796A25 /* HeaderAutoLayoutCollectionCoordinator.swift in Sources */,
 				A0D34DD5272AA35300791A07 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

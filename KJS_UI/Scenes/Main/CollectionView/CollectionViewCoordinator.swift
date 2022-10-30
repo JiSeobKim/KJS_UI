@@ -13,7 +13,7 @@ class CollectionViewCoordinator: CoordinatorPattern, CollectionViewCoordinatorLi
     var childCoordinators: [CoordinatorPattern]
     weak var viewController: UIViewController?
     
-    required init() {
+    init() {
         self.childCoordinators = []
         
         let vc = CollectionViewViewController()
@@ -26,8 +26,9 @@ class CollectionViewCoordinator: CoordinatorPattern, CollectionViewCoordinatorLi
     }
     
     func attachHeaderAutoLayoutCollection() {
-        
-        
+        let coordinator = HeaderAutoLayoutCollectionCoordinator()
+        let vc = coordinator.viewController
+        childCoordinators.append(coordinator)
+        activeWithPush(viewController: vc)
     }
-    
 }

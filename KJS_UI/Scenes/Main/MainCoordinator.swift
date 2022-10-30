@@ -61,6 +61,12 @@ class MainCoordinator: CoordinatorPattern, MainViewControllerCoordinatorListener
         childCoordinators.append(collectionViewCoordinator)
         self.activeWithPush(viewController: collectionViewCoordinator.viewController)
     }
+    
+    func attachTabBarViewController() {
+        let coordinator = TabBarCoordinator()
+        childCoordinators.append(coordinator)
+        activeWithPush(viewController: coordinator.viewController)
+    }
 }
 
 
@@ -72,9 +78,9 @@ extension MainCoordinator: DragAnimationPracticeCoordinatorDelegate {
 //        }
 //
 //        childCoordinators.removeAll(where: {$0 == self.dragAnimationPracticeCoordinator})
-        
-        guard let coordinator = dragAnimationPracticeCoordinator else { return }
-        childCoordinators.filter{$0 != coordinator}
-        
+//
+//        guard let coordinator = dragAnimationPracticeCoordinator else { return }
+//        childCoordinators.filter{$0 != coordinator}
+//
     }
 }

@@ -14,6 +14,7 @@ protocol MainViewControllerCoordinatorListener {
     func attachDragAnimationPractice()
     func attachDragAnimationBlog()
     func attachCollectionView()
+    func attachTabBarViewController()
 }
 
 protocol MainViewModelAvailable: MainViewEventListener {
@@ -48,7 +49,7 @@ class MainViewModel: MainViewModelAvailable  {
         case .collectionView:
             coordinatorListener?.attachCollectionView()
         case .tabBar:
-            break
+            coordinatorListener?.attachTabBarViewController()
         }
     }
 }
