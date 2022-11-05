@@ -22,12 +22,19 @@ class MainCoordinator: CoordinatorPattern, MainViewControllerCoordinatorListener
     required init(){
         self.childCoordinators = []
 
-        let sections: [AnyHashable] = [
-            MainSectionTypeImp(.experiment, rows: ExperimentRowType.allCases),
-            MainSectionTypeImp(.uikit, rows: UIKitSectionType.allCases)
+        let sections: [MainSection] = [
+            .uikit(rows: [
+                .collectionView,
+                .tabBar
+            ]),
+            .experiment(rows: [
+                .dragAnimation,
+                .dragAnimationForBlog
+            ])
         ]
         let mainViewModel = MainViewModel(sections: sections)
         let mainVC = MainViewController(viewModel: mainViewModel)
+        mainViewModel.coordinatorListener = self
         self.viewController = mainVC
     }
     

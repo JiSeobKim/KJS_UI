@@ -8,25 +8,22 @@
 
 import UIKit
 
-final class MainDiffableDataSource: UITableViewDiffableDataSource<AnyHashable, AnyHashable> {
+final class MainDiffableDataSource: UITableViewDiffableDataSource<MainSection, MainRow> {
 
     static func make(cellID: String, tableView: UITableView) -> MainDiffableDataSource {
         return .init(tableView: tableView) { tableView, indexPath, itemIdentifier in
             let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
-            var title: String?
-            if let experimentRow = itemIdentifier as? (any MainRowType) {
-                title = experimentRow.title
-            }
             var content = cell.defaultContentConfiguration()
-            content.text = title
+            content.text = itemIdentifier.title
             content.textProperties.font = .preferredFont(forTextStyle: .caption1)
             cell.contentConfiguration = content
+            cell.selectionStyle = .none
             return cell
         }
     }
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let section =  snapshot().sectionIdentifiers[section] as? (any MainSectionType)
-        return section?.sectionTitle
+        let section =  snapshot().sectionIdentifiers[safe: section]
+        return section?.title
     }
 }

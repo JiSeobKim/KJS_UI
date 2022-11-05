@@ -57,7 +57,7 @@
         <!--CollectionView-->
         <scene sceneID="ib6-aJ-MCb">
             <objects>
-                <viewControllerPlaceholder storyboardName="CollectionView" id="lIM-oX-1x1" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="CollectionViewSB" storyboardName="CollectionView" id="lIM-oX-1x1" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="68G-Za-7yR"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xy4-sE-dbD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -67,12 +67,12 @@
         <!--TabBar-->
         <scene sceneID="1tJ-0Y-6oa">
             <objects>
-                <viewControllerPlaceholder storyboardName="TabBar" id="rkz-1C-z6J" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="TabBarSB" storyboardName="TabBar" id="rkz-1C-z6J" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="PbK-mX-bfE"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kdi-1B-aD6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1849" y="-506"/>
+            <point key="canvasLocation" x="1847" y="-505"/>
         </scene>
         <!--KJS-->
         <scene sceneID="tne-QT-ifu">

@@ -28,6 +28,7 @@
 		A099B4EB25B5ADCF001B5FCE /* CollectionView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A099B4EA25B5ADCF001B5FCE /* CollectionView.storyboard */; };
 		A099B4EF25B5B133001B5FCE /* HeaderAutoLayoutCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A099B4EE25B5B133001B5FCE /* HeaderAutoLayoutCollectionViewController.swift */; };
 		A0AE636B2916C2AB00933DFC /* MainDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AE636A2916C2AB00933DFC /* MainDiffableDataSource.swift */; };
+		A0AE636D2916CAAA00933DFC /* Array+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AE636C2916CAAA00933DFC /* Array+Utils.swift */; };
 		A0B2A502240BBA8200099E41 /* DragAnimationStep1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B2A501240BBA8200099E41 /* DragAnimationStep1ViewController.swift */; };
 		A0B593EB272BAB0E00AE034D /* CollectionViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B593EA272BAB0E00AE034D /* CollectionViewViewController.swift */; };
 		A0B593ED272BAB7C00AE034D /* CollectionViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B593EC272BAB7C00AE034D /* CollectionViewCoordinator.swift */; };
@@ -40,7 +41,7 @@
 		A0D34DCE272A7DC600791A07 /* DragAnimationBlogCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D34DCD272A7DC600791A07 /* DragAnimationBlogCoordinator.swift */; };
 		A0D34DD0272A7E6B00791A07 /* DragAnimationBlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D34DCF272A7E6B00791A07 /* DragAnimationBlogViewController.swift */; };
 		A0D34DD5272AA35300791A07 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D34DD4272AA35300791A07 /* MainViewModel.swift */; };
-		A0DF57A5272AD98700811F03 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DF57A4272AD98700811F03 /* MainModel.swift */; };
+		A0DF57A5272AD98700811F03 /* MainSectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DF57A4272AD98700811F03 /* MainSectionType.swift */; };
 		A0DF57A7272ADF5B00811F03 /* MainViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DF57A6272ADF5B00811F03 /* MainViewCell.swift */; };
 		A0F0E7CB29165640008914B3 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A0F0E7CA29165640008914B3 /* SnapKit */; };
 		A0F0E7CD291658BF008914B3 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F0E7CC291658BF008914B3 /* Colors.swift */; };
@@ -71,6 +72,7 @@
 		A099B4EA25B5ADCF001B5FCE /* CollectionView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CollectionView.storyboard; sourceTree = "<group>"; };
 		A099B4EE25B5B133001B5FCE /* HeaderAutoLayoutCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderAutoLayoutCollectionViewController.swift; sourceTree = "<group>"; };
 		A0AE636A2916C2AB00933DFC /* MainDiffableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDiffableDataSource.swift; sourceTree = "<group>"; };
+		A0AE636C2916CAAA00933DFC /* Array+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Utils.swift"; sourceTree = "<group>"; };
 		A0B2A501240BBA8200099E41 /* DragAnimationStep1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAnimationStep1ViewController.swift; sourceTree = "<group>"; };
 		A0B593EA272BAB0E00AE034D /* CollectionViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewViewController.swift; sourceTree = "<group>"; };
 		A0B593EC272BAB7C00AE034D /* CollectionViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCoordinator.swift; sourceTree = "<group>"; };
@@ -83,7 +85,7 @@
 		A0D34DCD272A7DC600791A07 /* DragAnimationBlogCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAnimationBlogCoordinator.swift; sourceTree = "<group>"; };
 		A0D34DCF272A7E6B00791A07 /* DragAnimationBlogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAnimationBlogViewController.swift; sourceTree = "<group>"; };
 		A0D34DD4272AA35300791A07 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
-		A0DF57A4272AD98700811F03 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
+		A0DF57A4272AD98700811F03 /* MainSectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSectionType.swift; sourceTree = "<group>"; };
 		A0DF57A6272ADF5B00811F03 /* MainViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewCell.swift; sourceTree = "<group>"; };
 		A0F0E7CC291658BF008914B3 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		A0F2814F2601E35B00C78324 /* DragAnimationFinalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAnimationFinalViewController.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				A0B593EE272BACBD00AE034D /* UIStackView+Utils.swift */,
 				A0266910290EBC1E0018501C /* UIView+Utils.swift */,
 				A0F0E7CC291658BF008914B3 /* Colors.swift */,
+				A0AE636C2916CAAA00933DFC /* Array+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -240,7 +243,7 @@
 				6BF541F12403CB5F002C47DA /* MainViewController.swift */,
 				A0DF57A6272ADF5B00811F03 /* MainViewCell.swift */,
 				A0D34DD4272AA35300791A07 /* MainViewModel.swift */,
-				A0DF57A4272AD98700811F03 /* MainModel.swift */,
+				A0DF57A4272AD98700811F03 /* MainSectionType.swift */,
 				A0AE636A2916C2AB00933DFC /* MainDiffableDataSource.swift */,
 				A0D34DCC272A7ABC00791A07 /* DragAnimationPractice */,
 				A0B2A500240BBA6700099E41 /* DragAnimationBlog */,
@@ -353,6 +356,7 @@
 				A0266911290EBC1E0018501C /* UIView+Utils.swift in Sources */,
 				A002CAD8290E968200796A25 /* TabBarCoordinator.swift in Sources */,
 				A0216E4B2603343100652CFB /* CustomTabBarController.swift in Sources */,
+				A0AE636D2916CAAA00933DFC /* Array+Utils.swift in Sources */,
 				A0D34DC8272A5AB700791A07 /* DragAnimationPracticeCoordinator.swift in Sources */,
 				6BF541EE2403CB5F002C47DA /* AppDelegate.swift in Sources */,
 				A0B593EB272BAB0E00AE034D /* CollectionViewViewController.swift in Sources */,
@@ -367,7 +371,7 @@
 				A0B593EF272BACBD00AE034D /* UIStackView+Utils.swift in Sources */,
 				A0B593F1272BB17200AE034D /* CollectionViewViewModel.swift in Sources */,
 				A002CAD6290E964A00796A25 /* TabBarViewController.swift in Sources */,
-				A0DF57A5272AD98700811F03 /* MainModel.swift in Sources */,
+				A0DF57A5272AD98700811F03 /* MainSectionType.swift in Sources */,
 				6BF541F02403CB5F002C47DA /* SceneDelegate.swift in Sources */,
 				A002CADF290E99DA00796A25 /* DiffableDataSourceCollectionCell.swift in Sources */,
 				A0AE636B2916C2AB00933DFC /* MainDiffableDataSource.swift in Sources */,

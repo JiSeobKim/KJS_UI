@@ -19,17 +19,17 @@ protocol MainViewControllerCoordinatorListener {
 
 protocol MainViewModelAvailable: MainViewEventListener {
     var coordinatorListener: MainViewControllerCoordinatorListener? { get set }
-    var sections: [AnyHashable] { get }
+    var sections: [MainSection] { get }
     
-    init(sections: [AnyHashable])
+    init(sections: [MainSection])
 }
 
 class MainViewModel: MainViewModelAvailable  {
     
-    var sections: [AnyHashable]
+    var sections: [MainSection]
     var coordinatorListener: MainViewControllerCoordinatorListener?
 
-    required init(sections: [AnyHashable]) {
+    required init(sections: [MainSection]) {
         self.sections = sections
     }
     
@@ -38,15 +38,27 @@ class MainViewModel: MainViewModelAvailable  {
     }
     
     func didTapCell(_ indexPath: IndexPath) {
-//        switch sections[index] {
-//        case .dragAnimation:
-//            coordinatorListener?.attachDragAnimationPractice()
-//        case .dragAnimationForBlog:
-//            coordinatorListener?.attachDragAnimationBlog()
-//        case .collectionView:
-//            coordinatorListener?.attachCollectionView()
-//        case .tabBar:
-//            coordinatorListener?.attachTabBarViewController()
-//        }
+        guard let section = sections[safe: indexPath.section] else { return }
+
+        switch section {
+        case .uikit(let rows):
+            attachRow(rows[safe: indexPath.row])
+        case .experiment(let rows):
+            attachRow(rows[safe: indexPath.row])
+        }
+    }
+
+    func attachRow(_ rowType: MainRow?) {
+        guard let rowType else { return }
+        switch rowType {
+        case .dragAnimation:
+            coordinatorListener?.attachDragAnimationPractice()
+        case .dragAnimationForBlog:
+            coordinatorListener?.attachDragAnimationBlog()
+        case .collectionView:
+            coordinatorListener?.attachCollectionView()
+        case .tabBar:
+            coordinatorListener?.attachTabBarViewController()
+        }
     }
 }

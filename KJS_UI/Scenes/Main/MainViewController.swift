@@ -31,7 +31,7 @@ final class MainViewController: UIViewController {
     private var tableView: UITableView?
     private let cellID: String = "cell"
     private var dataSource: MainDiffableDataSource?
-    private var snapshot = NSDiffableDataSourceSnapshot<AnyHashable, AnyHashable>()
+    private var snapshot = NSDiffableDataSourceSnapshot<MainSection, MainRow>()
 
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
@@ -79,9 +79,7 @@ private extension MainViewController {
         let sections = viewModel?.sections ?? []
         snapshot.appendSections(sections)
         for section in sections {
-            if let convertedSection = section as? (any MainSectionType) {
-                snapshot.appendItems(convertedSection.rows, toSection: section)
-            }
+            snapshot.appendItems(section.rows, toSection: section)
         }
         dataSource?.apply(snapshot)
     }
