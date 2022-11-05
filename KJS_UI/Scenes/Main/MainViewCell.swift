@@ -37,10 +37,9 @@ class MainViewCell: UICollectionViewCell {
     }
     
     private func setViews() {
-        contentView.layer.borderWidth = 1
-        contentView.layer.borderColor = UIColor.systemCyan.cgColor
-        contentView.layer.cornerRadius = 12
-        contentView.layer.cornerCurve = .continuous
+        contentView.applyShadow()
+        contentView.applyCurve()
+        contentView.backgroundColor = .white
         
         self.contentView.addSubview(titleLabel)
         

@@ -42,6 +42,7 @@
 		A0DF57A5272AD98700811F03 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DF57A4272AD98700811F03 /* MainModel.swift */; };
 		A0DF57A7272ADF5B00811F03 /* MainViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DF57A6272ADF5B00811F03 /* MainViewCell.swift */; };
 		A0F0E7CB29165640008914B3 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A0F0E7CA29165640008914B3 /* SnapKit */; };
+		A0F0E7CD291658BF008914B3 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F0E7CC291658BF008914B3 /* Colors.swift */; };
 		A0F281502601E35B00C78324 /* DragAnimationFinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F2814F2601E35B00C78324 /* DragAnimationFinalViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +83,7 @@
 		A0D34DD4272AA35300791A07 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		A0DF57A4272AD98700811F03 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		A0DF57A6272ADF5B00811F03 /* MainViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewCell.swift; sourceTree = "<group>"; };
+		A0F0E7CC291658BF008914B3 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		A0F2814F2601E35B00C78324 /* DragAnimationFinalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAnimationFinalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -215,6 +217,7 @@
 				A0D34DCA272A5E1100791A07 /* UIViewController+Utils.swift */,
 				A0B593EE272BACBD00AE034D /* UIStackView+Utils.swift */,
 				A0266910290EBC1E0018501C /* UIView+Utils.swift */,
+				A0F0E7CC291658BF008914B3 /* Colors.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A099B4EF25B5B133001B5FCE /* HeaderAutoLayoutCollectionViewController.swift in Sources */,
+				A0F0E7CD291658BF008914B3 /* Colors.swift in Sources */,
 				A0D34DD0272A7E6B00791A07 /* DragAnimationBlogViewController.swift in Sources */,
 				6BF541F22403CB5F002C47DA /* MainViewController.swift in Sources */,
 				A0266911290EBC1E0018501C /* UIView+Utils.swift in Sources */,
