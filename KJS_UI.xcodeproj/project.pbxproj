@@ -27,6 +27,7 @@
 		A0266911290EBC1E0018501C /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0266910290EBC1E0018501C /* UIView+Utils.swift */; };
 		A099B4EB25B5ADCF001B5FCE /* CollectionView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A099B4EA25B5ADCF001B5FCE /* CollectionView.storyboard */; };
 		A099B4EF25B5B133001B5FCE /* HeaderAutoLayoutCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A099B4EE25B5B133001B5FCE /* HeaderAutoLayoutCollectionViewController.swift */; };
+		A0AE636B2916C2AB00933DFC /* MainDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0AE636A2916C2AB00933DFC /* MainDiffableDataSource.swift */; };
 		A0B2A502240BBA8200099E41 /* DragAnimationStep1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B2A501240BBA8200099E41 /* DragAnimationStep1ViewController.swift */; };
 		A0B593EB272BAB0E00AE034D /* CollectionViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B593EA272BAB0E00AE034D /* CollectionViewViewController.swift */; };
 		A0B593ED272BAB7C00AE034D /* CollectionViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B593EC272BAB7C00AE034D /* CollectionViewCoordinator.swift */; };
@@ -69,6 +70,7 @@
 		A0266910290EBC1E0018501C /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
 		A099B4EA25B5ADCF001B5FCE /* CollectionView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CollectionView.storyboard; sourceTree = "<group>"; };
 		A099B4EE25B5B133001B5FCE /* HeaderAutoLayoutCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderAutoLayoutCollectionViewController.swift; sourceTree = "<group>"; };
+		A0AE636A2916C2AB00933DFC /* MainDiffableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDiffableDataSource.swift; sourceTree = "<group>"; };
 		A0B2A501240BBA8200099E41 /* DragAnimationStep1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAnimationStep1ViewController.swift; sourceTree = "<group>"; };
 		A0B593EA272BAB0E00AE034D /* CollectionViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewViewController.swift; sourceTree = "<group>"; };
 		A0B593EC272BAB7C00AE034D /* CollectionViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCoordinator.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				A0DF57A6272ADF5B00811F03 /* MainViewCell.swift */,
 				A0D34DD4272AA35300791A07 /* MainViewModel.swift */,
 				A0DF57A4272AD98700811F03 /* MainModel.swift */,
+				A0AE636A2916C2AB00933DFC /* MainDiffableDataSource.swift */,
 				A0D34DCC272A7ABC00791A07 /* DragAnimationPractice */,
 				A0B2A500240BBA6700099E41 /* DragAnimationBlog */,
 				A099B4E825B5AD9E001B5FCE /* CollectionView */,
@@ -367,6 +370,7 @@
 				A0DF57A5272AD98700811F03 /* MainModel.swift in Sources */,
 				6BF541F02403CB5F002C47DA /* SceneDelegate.swift in Sources */,
 				A002CADF290E99DA00796A25 /* DiffableDataSourceCollectionCell.swift in Sources */,
+				A0AE636B2916C2AB00933DFC /* MainDiffableDataSource.swift in Sources */,
 				A0D34DCE272A7DC600791A07 /* DragAnimationBlogCoordinator.swift in Sources */,
 				A0D34DCB272A5E1100791A07 /* UIViewController+Utils.swift in Sources */,
 				A0216E532603416C00652CFB /* SettingTabIcon.swift in Sources */,

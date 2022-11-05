@@ -7,80 +7,99 @@
 //
 
 import UIKit
-
+import SnapKit
 
 protocol MainViewEventListener {
     
     func viewDidDisappear()
-    func didTapCell(index: Int)
+    func didTapCell(_ indexPath: IndexPath)
 }
 
-class MainViewController: UIViewController {
-    
-    @IBOutlet weak var collectionView: UICollectionView!
-    
-    var viewModel: MainViewModel!
-    private let cellID: String = "cell"
-    private let collectionViewPadding: CGFloat = 12
+final class MainViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        view.layoutIfNeeded()
-        setCollectionView()
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        viewModel.viewDidDisappear()
-    }
-    
-    private func setCollectionView() {
-        let flowlayout: UICollectionViewFlowLayout = {
-            let layout = UICollectionViewFlowLayout()
-            
-            
-            let itemWidth = (self.view.frame.width / 2) - (collectionViewPadding + collectionViewPadding / 2)
-            layout.itemSize = .init(width: itemWidth, height: itemWidth)
-            layout.minimumInteritemSpacing = collectionViewPadding
-            layout.minimumLineSpacing = collectionViewPadding
-            
-            return layout
-        }()
-        
-        collectionView.collectionViewLayout = flowlayout
-        collectionView.contentInset = UIEdgeInsets(
-            top: collectionViewPadding,
-            left: collectionViewPadding,
-            bottom: collectionViewPadding,
-            right: collectionViewPadding)
-        collectionView.register(MainViewCell.self, forCellWithReuseIdentifier: cellID)
-        collectionView.delegate = self
-        collectionView.dataSource = self
-    }
-}
+    enum Metric {
 
-extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.cellItems.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath)
-        
-        if let cCell = cell as? MainViewCell {
-            let title = viewModel.cellItems[indexPath.row]
-            cCell.setTitle(with: title)
+        enum Padding {
+
+            static let sidePadding: CGFloat = 15
+            static let itemSpacing: CGFloat = 8
         }
-        
-        return cell
     }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        viewModel.didTapCell(index: indexPath.row)
+
+    private var viewModel: MainViewModelAvailable?
+
+    private var tableView: UITableView?
+    private let cellID: String = "cell"
+    private var dataSource: MainDiffableDataSource?
+    private var snapshot = NSDiffableDataSourceSnapshot<AnyHashable, AnyHashable>()
+
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+
+        if tableView == nil {
+            setTableView()
+        }
+    }
+
+    init(viewModel: MainViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+        setUI()
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setUI()
+    }
+
+    private func setUI() {
+        title = "HOME"
+        view.backgroundColor = .systemGroupedBackground
     }
 }
 
+// MARK: - Set tableView
+private extension MainViewController {
+
+    private func setTableView() {
+        configureTableView()
+        layoutTableView()
+    }
+
+    private func configureTableView() {
+        let tableView = UITableView(frame: .zero, style: .insetGrouped)
+        tableView.layer.cornerCurve = .continuous
+        tableView.layer.cornerRadius = 8
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
+        tableView.delegate = self
+
+        self.tableView = tableView
+        self.dataSource = MainDiffableDataSource.make(cellID: cellID, tableView: tableView)
+
+        let sections = viewModel?.sections ?? []
+        snapshot.appendSections(sections)
+        for section in sections {
+            if let convertedSection = section as? (any MainSectionType) {
+                snapshot.appendItems(convertedSection.rows, toSection: section)
+            }
+        }
+        dataSource?.apply(snapshot)
+    }
+
+    private func layoutTableView() {
+        guard let tableView else { return }
+        view.addSubview(tableView)
+        tableView.snp.makeConstraints {
+            $0.directionalEdges.equalTo(view.safeAreaLayoutGuide)
+        }
+    }
+}
+
+
+// MARK: - TableView Delegate
+extension MainViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel?.didTapCell(indexPath)
+    }
+}

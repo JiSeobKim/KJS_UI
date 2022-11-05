@@ -21,22 +21,14 @@ class MainCoordinator: CoordinatorPattern, MainViewControllerCoordinatorListener
     
     required init(){
         self.childCoordinators = []
-        self.viewController = UIViewController.makeViewController(
-            storyboardName: "Main",
-            identifier: "MainVC"
-        )
-        
-        if let mainVC = viewController as? MainViewController {
-            
-            let viewModel = MainViewModel(models: [
-                .dragAnimation,
-                .dragAnimationForBlog,
-                .collectionView,
-                .tabBar
-            ])
-            viewModel.coordinatorListener = self
-            mainVC.viewModel = viewModel
-        }
+
+        let sections: [AnyHashable] = [
+            MainSectionTypeImp(.experiment, rows: ExperimentRowType.allCases),
+            MainSectionTypeImp(.uikit, rows: UIKitSectionType.allCases)
+        ]
+        let mainViewModel = MainViewModel(sections: sections)
+        let mainVC = MainViewController(viewModel: mainViewModel)
+        self.viewController = mainVC
     }
     
     func detachMainView() {

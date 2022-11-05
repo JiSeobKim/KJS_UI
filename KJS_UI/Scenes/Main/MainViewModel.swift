@@ -19,37 +19,34 @@ protocol MainViewControllerCoordinatorListener {
 
 protocol MainViewModelAvailable: MainViewEventListener {
     var coordinatorListener: MainViewControllerCoordinatorListener? { get set }
-    var cellItems: [String] { get }
+    var sections: [AnyHashable] { get }
     
-    init(models: [MainModel])
+    init(sections: [AnyHashable])
 }
 
 class MainViewModel: MainViewModelAvailable  {
     
-    var cellItems: [String]
+    var sections: [AnyHashable]
     var coordinatorListener: MainViewControllerCoordinatorListener?
-    
-    private var models: [MainModel]
-    
-    required init(models: [MainModel]) {
-        self.cellItems = models.map{$0.title}
-        self.models = models
+
+    required init(sections: [AnyHashable]) {
+        self.sections = sections
     }
     
     func viewDidDisappear() {
         coordinatorListener?.detachMainView()
     }
     
-    func didTapCell(index: Int) {
-        switch models[index] {
-        case .dragAnimation:
-            coordinatorListener?.attachDragAnimationPractice()
-        case .dragAnimationForBlog:
-            coordinatorListener?.attachDragAnimationBlog()
-        case .collectionView:
-            coordinatorListener?.attachCollectionView()
-        case .tabBar:
-            coordinatorListener?.attachTabBarViewController()
-        }
+    func didTapCell(_ indexPath: IndexPath) {
+//        switch sections[index] {
+//        case .dragAnimation:
+//            coordinatorListener?.attachDragAnimationPractice()
+//        case .dragAnimationForBlog:
+//            coordinatorListener?.attachDragAnimationBlog()
+//        case .collectionView:
+//            coordinatorListener?.attachCollectionView()
+//        case .tabBar:
+//            coordinatorListener?.attachTabBarViewController()
+//        }
     }
 }
