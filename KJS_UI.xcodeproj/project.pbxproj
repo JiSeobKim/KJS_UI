@@ -519,6 +519,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 689KAW4595;
 				INFOPLIST_FILE = KJS_UI/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = KJS_STUDY;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -538,6 +539,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 689KAW4595;
 				INFOPLIST_FILE = KJS_UI/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = KJS_STUDY;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
