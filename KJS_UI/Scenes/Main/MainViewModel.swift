@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol MainViewControllerCoordinatorListener {
     
@@ -20,6 +21,7 @@ protocol MainViewControllerCoordinatorListener {
 protocol MainViewModelAvailable: MainViewEventListener {
     var coordinatorListener: MainViewControllerCoordinatorListener? { get set }
     var sections: [MainSection] { get }
+    var dataSource: MainDiffableDataSource? { get set }
     
     init(sections: [MainSection])
 }
@@ -28,6 +30,12 @@ class MainViewModel: MainViewModelAvailable  {
     
     var sections: [MainSection]
     var coordinatorListener: MainViewControllerCoordinatorListener?
+    var dataSource: MainDiffableDataSource? {
+        didSet {
+            applyDataSource()
+        }
+    }
+    private var snapshot = NSDiffableDataSourceSnapshot<MainSection, MainRow>()
 
     required init(sections: [MainSection]) {
         self.sections = sections
@@ -60,5 +68,16 @@ class MainViewModel: MainViewModelAvailable  {
         case .tabBar:
             coordinatorListener?.attachTabBarViewController()
         }
+    }
+}
+
+private extension MainViewModel {
+
+    func applyDataSource() {
+        snapshot.appendSections(sections)
+        for section in sections {
+            snapshot.appendItems(section.rows, toSection: section)
+        }
+        dataSource?.apply(snapshot)
     }
 }

@@ -30,8 +30,6 @@ final class MainViewController: UIViewController {
 
     private var tableView: UITableView?
     private let cellID: String = "cell"
-    private var dataSource: MainDiffableDataSource?
-    private var snapshot = NSDiffableDataSourceSnapshot<MainSection, MainRow>()
 
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
@@ -68,20 +66,12 @@ private extension MainViewController {
 
     private func configureTableView() {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
-        tableView.layer.cornerCurve = .continuous
-        tableView.layer.cornerRadius = 8
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
         tableView.delegate = self
+        tableView.rowHeight = 50
 
         self.tableView = tableView
-        self.dataSource = MainDiffableDataSource.make(cellID: cellID, tableView: tableView)
-
-        let sections = viewModel?.sections ?? []
-        snapshot.appendSections(sections)
-        for section in sections {
-            snapshot.appendItems(section.rows, toSection: section)
-        }
-        dataSource?.apply(snapshot)
+        viewModel?.dataSource = MainDiffableDataSource.make(cellID: cellID, tableView: tableView)
     }
 
     private func layoutTableView() {

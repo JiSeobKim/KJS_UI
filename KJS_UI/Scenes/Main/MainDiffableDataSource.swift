@@ -15,7 +15,7 @@ final class MainDiffableDataSource: UITableViewDiffableDataSource<MainSection, M
             let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
             var content = cell.defaultContentConfiguration()
             content.text = itemIdentifier.title
-            content.textProperties.font = .preferredFont(forTextStyle: .caption1)
+            content.textProperties.font = .preferredFont(forTextStyle: .body)
             cell.contentConfiguration = content
             cell.selectionStyle = .none
             return cell
