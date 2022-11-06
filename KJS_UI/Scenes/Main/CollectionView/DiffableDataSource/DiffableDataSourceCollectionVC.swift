@@ -10,14 +10,14 @@ import UIKit
 
 final class DiffableDataSourceCollectionVC: UIViewController {
 
-    enum Section: CaseIterable {
-        case first
-        case second
+    private enum Metric {
+
+        static let buttonHeight: CGFloat = 40
+        static let buttonFontSize: CGFloat = 15
     }
 
-    private var sectionData: [Section] = [.first]
-    private var rowData: [String] = ["1", "2", "3"]
     private let cellID = "cell"
+    private let vm = DiffableDataSourceCollectionVM()
     private let mainColor: UIColor = .systemBlue
 
     private lazy var collectionView: UICollectionView = {
@@ -30,11 +30,11 @@ final class DiffableDataSourceCollectionVC: UIViewController {
 
     private lazy var mainStackView: UIStackView = {
         let st = UIStackView.makeBaseStackView()
-        [collectionView, inputStackView].forEach { st.addArrangedSubview($0) }
+        [collectionView, insertStackView, reloadStackView, updateAllColorsButton].forEach { st.addArrangedSubview($0) }
         return st
     }()
 
-    private lazy var inputStackView: UIStackView = {
+    private lazy var insertStackView: UIStackView = {
         let st = UIStackView.makeBaseStackView()
         st.axis = .horizontal
         st.distribution = .fillEqually
@@ -45,7 +45,7 @@ final class DiffableDataSourceCollectionVC: UIViewController {
     private lazy var addButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.setTitle("Add 1 Element", for: .normal)
-        btn.titleLabel?.font = .boldSystemFont(ofSize: 20)
+        btn.titleLabel?.font = .boldSystemFont(ofSize: Metric.buttonFontSize)
         btn.addTarget(self, action: #selector(addAction), for: .touchUpInside)
         btn.applyBorder(color: mainColor)
         return btn
@@ -54,17 +54,37 @@ final class DiffableDataSourceCollectionVC: UIViewController {
     private lazy var addTwoElementButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.setTitle("Add 2 Element", for: .normal)
-        btn.titleLabel?.font = .boldSystemFont(ofSize: 20)
+        btn.titleLabel?.font = .boldSystemFont(ofSize: Metric.buttonFontSize)
         btn.addTarget(self, action: #selector(addTwoElementAction), for: .touchUpInside)
         btn.applyBorder(color: mainColor)
         return btn
     }()
 
-    private lazy var dataSource = UICollectionViewDiffableDataSource<Section, String>(collectionView: collectionView) { collectionView, indexPath, text in
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cellID, for: indexPath) as! DiffableDataSourceCollectionCell
-        cell.inject(text, color: self.mainColor)
-        return cell
-    }
+    private lazy var reloadStackView: UIStackView = {
+        let st = UIStackView.makeBaseStackView()
+        st.axis = .horizontal
+        st.distribution = .fillEqually
+        st.addArrangedSubview(reloadFirstButton)
+        return st
+    }()
+
+    private lazy var reloadFirstButton: UIButton = {
+        let btn = UIButton(type: .system)
+        btn.addTarget(self, action: #selector(updateFirstColorAction), for: .touchUpInside)
+        btn.titleLabel?.font = .boldSystemFont(ofSize: Metric.buttonFontSize)
+        btn.setTitle("Update First Item Color", for: .normal)
+        btn.applyBorder()
+        return btn
+    }()
+
+    private lazy var updateAllColorsButton: UIButton = {
+        let btn = UIButton(type: .system)
+        btn.addTarget(self, action: #selector(updateAllColorsAction), for: .touchUpInside)
+        btn.titleLabel?.font = .boldSystemFont(ofSize: Metric.buttonFontSize)
+        btn.setTitle("Update All Color", for: .normal)
+        btn.applyBorder()
+        return btn
+    }()
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -77,8 +97,7 @@ final class DiffableDataSourceCollectionVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
-
-        applyDataSource()
+        setDataSource()
     }
 
     private func setUI() {
@@ -91,32 +110,37 @@ final class DiffableDataSourceCollectionVC: UIViewController {
         mainStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -padding).isActive = true
         mainStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -padding).isActive = true
 
-        inputStackView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        insertStackView.heightAnchor.constraint(equalToConstant: Metric.buttonHeight).isActive = true
+        reloadStackView.heightAnchor.constraint(equalToConstant: Metric.buttonHeight).isActive = true
+
+        updateAllColorsButton.heightAnchor.constraint(equalToConstant: Metric.buttonHeight).isActive = true
+    }
+
+    private func setDataSource() {
+        vm.dataSource = DiffableDataSourceCollectionDataSource(collectionView: collectionView) { collectionView, indexPath, object in
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cellID, for: indexPath) as! DiffableDataSourceCollectionCell
+            cell.inject(object.title, color: object.color)
+            return cell
+        }
     }
 
     @objc
     private func addAction() {
-        let newValue = String(rowData.count + 1)
-        let index = (0..<rowData.count).randomElement()!
-        rowData.insert(newValue, at: index)
-        applyDataSource()
+        vm.addOneElement()
     }
 
     @objc
     private func addTwoElementAction() {
-        let newValue1 = String(rowData.count + 1)
-        let newValue2 = String(rowData.count + 2)
-        let index1 = (0..<rowData.count).randomElement()!
-        let index2 = (0..<rowData.count).randomElement()!
-        rowData.insert(newValue1, at: index1)
-        rowData.insert(newValue2, at: index2)
-        applyDataSource()
+        vm.addTwoElement()
     }
 
-    private func applyDataSource() {
-        var snapShot = NSDiffableDataSourceSnapshot<Section, String>()
-        snapShot.appendSections(sectionData)
-        snapShot.appendItems(rowData, toSection: .first)
-        dataSource.apply(snapShot, animatingDifferences: true)
+    @objc
+    private func updateFirstColorAction() {
+        vm.updateFirstColor()
+    }
+
+    @objc
+    private func updateAllColorsAction() {
+        vm.updateAllColors()
     }
 }

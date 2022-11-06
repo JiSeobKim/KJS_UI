@@ -41,6 +41,10 @@
 		A0D34DCE272A7DC600791A07 /* DragAnimationBlogCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D34DCD272A7DC600791A07 /* DragAnimationBlogCoordinator.swift */; };
 		A0D34DD0272A7E6B00791A07 /* DragAnimationBlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D34DCF272A7E6B00791A07 /* DragAnimationBlogViewController.swift */; };
 		A0D34DD5272AA35300791A07 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D34DD4272AA35300791A07 /* MainViewModel.swift */; };
+		A0DE052529177687003CFD55 /* DiffableDataSourceCollectionVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DE052429177687003CFD55 /* DiffableDataSourceCollectionVM.swift */; };
+		A0DE0527291783B6003CFD55 /* DiffableDataSourceCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DE0526291783B6003CFD55 /* DiffableDataSourceCollectionDataSource.swift */; };
+		A0DE0529291784B0003CFD55 /* DiffableDataSourceRowVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DE0528291784B0003CFD55 /* DiffableDataSourceRowVM.swift */; };
+		A0DE052B29178861003CFD55 /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DE052A29178861003CFD55 /* UIColor+Utils.swift */; };
 		A0DF57A5272AD98700811F03 /* MainSectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DF57A4272AD98700811F03 /* MainSectionType.swift */; };
 		A0DF57A7272ADF5B00811F03 /* MainViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DF57A6272ADF5B00811F03 /* MainViewCell.swift */; };
 		A0F0E7CB29165640008914B3 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A0F0E7CA29165640008914B3 /* SnapKit */; };
@@ -85,6 +89,10 @@
 		A0D34DCD272A7DC600791A07 /* DragAnimationBlogCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAnimationBlogCoordinator.swift; sourceTree = "<group>"; };
 		A0D34DCF272A7E6B00791A07 /* DragAnimationBlogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAnimationBlogViewController.swift; sourceTree = "<group>"; };
 		A0D34DD4272AA35300791A07 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		A0DE052429177687003CFD55 /* DiffableDataSourceCollectionVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffableDataSourceCollectionVM.swift; sourceTree = "<group>"; };
+		A0DE0526291783B6003CFD55 /* DiffableDataSourceCollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffableDataSourceCollectionDataSource.swift; sourceTree = "<group>"; };
+		A0DE0528291784B0003CFD55 /* DiffableDataSourceRowVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffableDataSourceRowVM.swift; sourceTree = "<group>"; };
+		A0DE052A29178861003CFD55 /* UIColor+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
 		A0DF57A4272AD98700811F03 /* MainSectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSectionType.swift; sourceTree = "<group>"; };
 		A0DF57A6272ADF5B00811F03 /* MainViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewCell.swift; sourceTree = "<group>"; };
 		A0F0E7CC291658BF008914B3 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -152,6 +160,9 @@
 				A002CADA290E98EE00796A25 /* DiffableDataSourceCollectionVC.swift */,
 				A002CADE290E99DA00796A25 /* DiffableDataSourceCollectionCell.swift */,
 				A002CADC290E992800796A25 /* DiffableDataSourceCoordinator.swift */,
+				A0DE052429177687003CFD55 /* DiffableDataSourceCollectionVM.swift */,
+				A0DE0526291783B6003CFD55 /* DiffableDataSourceCollectionDataSource.swift */,
+				A0DE0528291784B0003CFD55 /* DiffableDataSourceRowVM.swift */,
 			);
 			path = DiffableDataSource;
 			sourceTree = "<group>";
@@ -222,6 +233,7 @@
 				A0B593EE272BACBD00AE034D /* UIStackView+Utils.swift */,
 				A0266910290EBC1E0018501C /* UIView+Utils.swift */,
 				A0F0E7CC291658BF008914B3 /* Colors.swift */,
+				A0DE052A29178861003CFD55 /* UIColor+Utils.swift */,
 				A0AE636C2916CAAA00933DFC /* Array+Utils.swift */,
 			);
 			path = Utils;
@@ -351,6 +363,8 @@
 			files = (
 				A099B4EF25B5B133001B5FCE /* HeaderAutoLayoutCollectionViewController.swift in Sources */,
 				A0F0E7CD291658BF008914B3 /* Colors.swift in Sources */,
+				A0DE0527291783B6003CFD55 /* DiffableDataSourceCollectionDataSource.swift in Sources */,
+				A0DE0529291784B0003CFD55 /* DiffableDataSourceRowVM.swift in Sources */,
 				A0D34DD0272A7E6B00791A07 /* DragAnimationBlogViewController.swift in Sources */,
 				6BF541F22403CB5F002C47DA /* MainViewController.swift in Sources */,
 				A0266911290EBC1E0018501C /* UIView+Utils.swift in Sources */,
@@ -374,12 +388,14 @@
 				A0DF57A5272AD98700811F03 /* MainSectionType.swift in Sources */,
 				6BF541F02403CB5F002C47DA /* SceneDelegate.swift in Sources */,
 				A002CADF290E99DA00796A25 /* DiffableDataSourceCollectionCell.swift in Sources */,
+				A0DE052B29178861003CFD55 /* UIColor+Utils.swift in Sources */,
 				A0AE636B2916C2AB00933DFC /* MainDiffableDataSource.swift in Sources */,
 				A0D34DCE272A7DC600791A07 /* DragAnimationBlogCoordinator.swift in Sources */,
 				A0D34DCB272A5E1100791A07 /* UIViewController+Utils.swift in Sources */,
 				A0216E532603416C00652CFB /* SettingTabIcon.swift in Sources */,
 				A002CAD4290E94E600796A25 /* HeaderAutoLayoutCollectionCoordinator.swift in Sources */,
 				A002CADB290E98EE00796A25 /* DiffableDataSourceCollectionVC.swift in Sources */,
+				A0DE052529177687003CFD55 /* DiffableDataSourceCollectionVM.swift in Sources */,
 				A0D34DD5272AA35300791A07 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -525,7 +541,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.JS.test.KJS-UI";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.JS.KJS-UI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -545,7 +561,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.JS.test.KJS-UI";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.JS.KJS-UI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
