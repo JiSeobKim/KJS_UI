@@ -60,8 +60,8 @@ class CollectionViewViewController: UIViewController {
         view.addSubview(stackView)
         view.backgroundColor = .white
         
-        stackView.addArrangedSubview(headerAutoCollectionButton)
         stackView.addArrangedSubview(diffableDataSourceButton)
+        stackView.addArrangedSubview(headerAutoCollectionButton)
         
         NSLayoutConstraint.activate([
             stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),

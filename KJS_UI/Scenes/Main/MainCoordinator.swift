@@ -30,7 +30,8 @@ class MainCoordinator: CoordinatorPattern, MainViewControllerCoordinatorListener
             .experiment(rows: [
                 .dragAnimation,
                 .dragAnimationForBlog
-            ])
+            ]),
+            .combine(rows: []),
         ]
         let mainViewModel = MainViewModel(sections: sections)
         let mainVC = MainViewController(viewModel: mainViewModel)

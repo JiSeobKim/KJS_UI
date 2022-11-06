@@ -13,11 +13,13 @@ enum MainSection: Hashable {
 
     case uikit(rows: [MainRow])
     case experiment(rows: [MainRow])
+    case combine(rows: [MainRow])
 
     var title: String {
         switch self {
         case .uikit: return "UIKit"
         case .experiment: return "Experiment"
+        case .combine: return "Combine"
         }
     }
 
@@ -25,6 +27,7 @@ enum MainSection: Hashable {
         switch self {
         case .uikit(let rows): return rows
         case .experiment(let rows): return rows
+        case .combine(let rows): return rows
         }
     }
 }
@@ -50,14 +53,5 @@ enum MainRow: Hashable {
             text = "Drag Animation (Blog)"
         }
         return text.attachEmoji()
-    }
-
-    static func makeGroup(with section: MainSection) -> [MainRow] {
-        switch section {
-        case .uikit:
-            return [collectionView, tabBar]
-        case .experiment:
-            return [dragAnimation, dragAnimationForBlog]
-        }
     }
 }

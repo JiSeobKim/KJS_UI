@@ -53,6 +53,8 @@ class MainViewModel: MainViewModelAvailable  {
             attachRow(rows[safe: indexPath.row])
         case .experiment(let rows):
             attachRow(rows[safe: indexPath.row])
+        case .combine(let rows):
+            return
         }
     }
 
