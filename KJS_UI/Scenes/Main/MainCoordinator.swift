@@ -32,6 +32,9 @@ class MainCoordinator: CoordinatorPattern, MainViewControllerCoordinatorListener
                 .dragAnimationForBlog
             ]),
             .combine(rows: []),
+            .rxswift(rows: [
+                .subscribeOnObserveOn
+            ])
         ]
         let mainViewModel = MainViewModel(sections: sections)
         let mainVC = MainViewController(viewModel: mainViewModel)
@@ -66,6 +69,11 @@ class MainCoordinator: CoordinatorPattern, MainViewControllerCoordinatorListener
         let coordinator = TabBarCoordinator()
         childCoordinators.append(coordinator)
         activeWithPush(viewController: coordinator.viewController)
+    }
+
+    func attachSubscribeOnObserveOn() {
+        let vc = SubscribeOnOberveOnBuilder.make()
+        activeWithPush(viewController: vc)
     }
 }
 

@@ -16,6 +16,7 @@ protocol MainViewControllerCoordinatorListener {
     func attachDragAnimationBlog()
     func attachCollectionView()
     func attachTabBarViewController()
+    func attachSubscribeOnObserveOn()
 }
 
 protocol MainViewModelAvailable: MainViewEventListener {
@@ -53,7 +54,10 @@ class MainViewModel: MainViewModelAvailable  {
             attachRow(rows[safe: indexPath.row])
         case .experiment(let rows):
             attachRow(rows[safe: indexPath.row])
-        case .combine(let rows):
+        case .combine:
+            return
+        case .rxswift(let rows):
+            attachRow(rows[safe: indexPath.row])
             return
         }
     }
@@ -69,6 +73,8 @@ class MainViewModel: MainViewModelAvailable  {
             coordinatorListener?.attachCollectionView()
         case .tabBar:
             coordinatorListener?.attachTabBarViewController()
+        case .subscribeOnObserveOn:
+            coordinatorListener?.attachSubscribeOnObserveOn()
         }
     }
 }

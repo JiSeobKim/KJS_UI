@@ -14,12 +14,14 @@ enum MainSection: Hashable {
     case uikit(rows: [MainRow])
     case experiment(rows: [MainRow])
     case combine(rows: [MainRow])
+    case rxswift(rows: [MainRow])
 
     var title: String {
         switch self {
         case .uikit: return "UIKit"
         case .experiment: return "Experiment"
         case .combine: return "Combine"
+        case .rxswift: return "RxSwift"
         }
     }
 
@@ -28,6 +30,7 @@ enum MainSection: Hashable {
         case .uikit(let rows): return rows
         case .experiment(let rows): return rows
         case .combine(let rows): return rows
+        case .rxswift(let rows): return rows
         }
     }
 }
@@ -40,6 +43,8 @@ enum MainRow: Hashable {
     case dragAnimation
     case dragAnimationForBlog
 
+    case subscribeOnObserveOn
+
     var title: String {
         var text: String
         switch self {
@@ -51,6 +56,8 @@ enum MainRow: Hashable {
             text = "Drag Animation"
         case .dragAnimationForBlog:
             text = "Drag Animation (Blog)"
+        case .subscribeOnObserveOn:
+            text = "SubscribeOn & ObserveOn"
         }
         return text.attachEmoji()
     }
