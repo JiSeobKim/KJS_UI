@@ -17,6 +17,7 @@ protocol MainViewControllerCoordinatorListener {
     func attachCollectionView()
     func attachTabBarViewController()
     func attachSubscribeOnObserveOn()
+    func attachBasicAsyncAwait()
 }
 
 protocol MainViewModelAvailable: MainViewEventListener {
@@ -54,11 +55,10 @@ class MainViewModel: MainViewModelAvailable  {
             attachRow(rows[safe: indexPath.row])
         case .experiment(let rows):
             attachRow(rows[safe: indexPath.row])
-        case .combine:
-            return
+        case .combine(let rows):
+            attachRow(rows[safe: indexPath.row])
         case .rxswift(let rows):
             attachRow(rows[safe: indexPath.row])
-            return
         }
     }
 
@@ -75,6 +75,8 @@ class MainViewModel: MainViewModelAvailable  {
             coordinatorListener?.attachTabBarViewController()
         case .subscribeOnObserveOn:
             coordinatorListener?.attachSubscribeOnObserveOn()
+        case .basicAsyncAwait:
+            coordinatorListener?.attachBasicAsyncAwait()
         }
     }
 }

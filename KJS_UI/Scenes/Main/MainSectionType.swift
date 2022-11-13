@@ -45,6 +45,8 @@ enum MainRow: Hashable {
 
     case subscribeOnObserveOn
 
+    case basicAsyncAwait
+
     var title: String {
         var text: String
         switch self {
@@ -58,6 +60,8 @@ enum MainRow: Hashable {
             text = "Drag Animation (Blog)"
         case .subscribeOnObserveOn:
             text = "SubscribeOn & ObserveOn"
+        case .basicAsyncAwait:
+            text = "Basic Async & Await"
         }
         return text.attachEmoji()
     }

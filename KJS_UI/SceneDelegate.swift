@@ -26,8 +26,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         navi.navigationBar.barTintColor = .secondarySystemGroupedBackground
         navi.navigationBar.largeTitleTextAttributes = [.foregroundColor : Colors.mainColor]
         navi.navigationBar.titleTextAttributes = [.foregroundColor : Colors.mainColor]
-        let mainCoordinator = MainCoordinator()
-        navi.setViewControllers([mainCoordinator.viewController!], animated: false)
+        let mainBuilder = MainBuilder()
+        let mainVC = mainBuilder.coordinator.viewController
+        navi.setViewControllers([mainVC!], animated: false)
         
         window.rootViewController = navi
         window.makeKeyAndVisible()

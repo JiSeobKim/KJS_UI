@@ -19,27 +19,9 @@ class MainCoordinator: CoordinatorPattern, MainViewControllerCoordinatorListener
     private var dragAnimationPracticeCoordinator: DragAnimationPracticeCoordinator?
     
     
-    required init(){
+    required init(vc: MainViewController, vm: MainViewModel){
         self.childCoordinators = []
-
-        let sections: [MainSection] = [
-            .uikit(rows: [
-                .collectionView,
-                .tabBar
-            ]),
-            .experiment(rows: [
-                .dragAnimation,
-                .dragAnimationForBlog
-            ]),
-            .combine(rows: []),
-            .rxswift(rows: [
-                .subscribeOnObserveOn
-            ])
-        ]
-        let mainViewModel = MainViewModel(sections: sections)
-        let mainVC = MainViewController(viewModel: mainViewModel)
-        mainViewModel.coordinatorListener = self
-        self.viewController = mainVC
+        self.viewController = vc
     }
     
     func detachMainView() {
@@ -73,6 +55,11 @@ class MainCoordinator: CoordinatorPattern, MainViewControllerCoordinatorListener
 
     func attachSubscribeOnObserveOn() {
         let vc = SubscribeOnOberveOnBuilder.make()
+        activeWithPush(viewController: vc)
+    }
+
+    func attachBasicAsyncAwait() {
+        let vc = BasicAsyncAwaitBuilder.make()
         activeWithPush(viewController: vc)
     }
 }
